@@ -14,7 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
-
+    <link href="css/dropdown.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -45,7 +45,7 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Nhom HHH</a>
-                <input type="text" class="form-control" style="width: 50%; margin-top:10px;" placeholder="Tìm kiếm sản phẩm...">
+                <input type="text" class="form-control" style="width: 50%; margin-top:8px;margin-left:150px;" placeholder="Tìm kiếm">
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,11 +63,19 @@
                     <li>
                         <a class="page-scroll" href="#contact">Liên Hệ</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Liên Hệ</a>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoginModal" style="background-color:#4A423F;margin-top:9px;">Đăng Nhập</button>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user pull-right"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Tài Khoản <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"> Giỏ Hàng <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" >Tin Nhắn <span class="badge pull-right"> 0 </span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#LoginModal"> Đăng Nhập <span class="glyphicon glyphicon-log-in pull-right"></span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-toggle="modal" data-target="#RegisterModal">Đăng Kí <span class="glyphicon glyphicon-registration-mark pull-right"></span></a></li>
+                          </ul>
                     </li>
                 </ul>
             </div>
@@ -99,6 +107,31 @@
                 <a href="#" class="forgot-password">
                     Forgot the password?
                 </a>
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-Close" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="RegisterModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Đăng nhập</h4>
+            </div>
+            <div class="modal-body">
+                <img id="profile-img" class="profile-img-card" src="img/avatar_login.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin">
+                    <span id="reauth-username" class="reauth-username"></span>
+                    <input type="email" id="inputmail" class="form-control" placeholder="Email" required autofocus>
+                    <input type="text" id="inputusername" class="form-control" placeholder="User Name" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
+                </form><!-- /form -->
                 </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-Close" data-dismiss="modal">Close</button>
