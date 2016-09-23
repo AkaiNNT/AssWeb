@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
 
@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -62,12 +63,49 @@
                     <li>
                         <a class="page-scroll" href="#contact">Liên Hệ</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Liên Hệ</a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoginModal" style="background-color:#4A423F;margin-top:9px;">Đăng Nhập</button>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <div class="modal fade in" id="LoginModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Đăng nhập</h4>
+            </div>
+            <div class="modal-body">
+                <img id="profile-img" class="profile-img-card" src="img/avatar_login.png" />
+                <p id="profile-name" class="profile-name-card"></p>
+                <form class="form-signin">
+                    <span id="reauth-username" class="reauth-username"></span>
+                    <input type="text" id="inputusername" class="form-control" placeholder="User Name" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember password
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                </form><!-- /form -->
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-Close" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+  </div>
 
     <header>
         <div class="header-content">
