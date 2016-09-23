@@ -29,7 +29,7 @@
     min-height: 1em;
 }
 
-.reauth-username {
+.reauth-username{
     display: block;
     color: #404040;
     line-height: 2;
@@ -44,10 +44,14 @@
     box-sizing: border-box;
 }
 
-.form-signin #inputusername,
-.form-signin #inputmail,
-.form-signin #confirmPassword,
-.form-signin #inputPassword {
+.form-signin #inputusername1,
+.form-signin #inputusername2,
+.form-signin #inputmail1,
+.form-signin #inputmail2,
+.form-signin #confirmPassword1,
+.form-signin #confirmPassword2,
+.form-signin #inputPassword1,
+.form-signin #inputPassword2 {
     direction: ltr;
     height: 44px;
     font-size: 16px;
