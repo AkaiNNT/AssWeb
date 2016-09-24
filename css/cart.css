@@ -1,0 +1,44 @@
+.shopping-cart{
+	margin-top: 100px;
+	margin-left: 50px;
+}
+.Product-detail a{
+	text-decoration: none;
+}
+.table-striped .con{
+	padding-top: 35px;
+}
+.pa{
+	padding: 5px 10px 10px 10px;
+	color: white;
+	background-color: #333;
+	margin-bottom: 5px;
+}
+.pa h3{
+	border-bottom: 1px solid white;
+}
+.pa p{
+	font-size: 12px;
+	text-align: justify;
+}
+.pa a{
+	font-size: 12px;
+}
+.clear{
+	clear: both;
+}
+.CheckOut{
+	margin-top: 5em;
+	margin-left: 70%;
+}
+.CheckOut table{
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+.CheckOut table  tr{
+	height: 50px;
+}
+.Product-same .spd:hover{
+	margin-top: 2px;
+	border: 1px solid #333;
+}
