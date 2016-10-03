@@ -27,17 +27,6 @@
 .clear{
 	clear: both;
 }
-.CheckOut{
-	margin-top: 5em;
-	margin-left: 70%;
-}
-.CheckOut table{
-	border-top: 1px solid #333;
-	border-bottom: 1px solid #333;
-}
-.CheckOut table  tr{
-	height: 50px;
-}
 .Product-same .spd:hover{
 	margin-top: 2px;
 	border: 1px solid #333;
