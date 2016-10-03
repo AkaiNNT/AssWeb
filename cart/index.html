@@ -27,6 +27,7 @@
 
     <!-- Theme CSS -->
     <link href="../css/creative.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/checkout.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -156,6 +157,7 @@
                         <th>QTY</th>
                         <th>Price</th>
                         <th>SubTotal</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -169,6 +171,7 @@
                         </th>
                         <th class="con"><p>10<span>$</span></p></th>
                         <th class="con"><p>10<span>$</span></p></th>
+                        <th class="con"><a href="#">X</a></th>
                     </tr>
                 </tbody>
                 <tbody>
@@ -182,6 +185,7 @@
                         </th>
                         <th class="con"><p>10<span>$</span></p></th>
                         <th class="con"><p>10<span>$</span></p></th>
+                        <th class="con"><a href="#">X</a></th>
                     </tr>
                 </tbody>
                 <tbody>
@@ -195,6 +199,7 @@
                         </th>
                         <th class="con"><p>10<span>$</span></p></th>
                         <th class="con"><p>10<span>$</span></p></th>
+                        <th class="con"><a href="#">X</a></th>
                     </tr>
                 </tbody>
             </table>
@@ -215,12 +220,12 @@
                         <td style="width:10em;">??? <span>$</span></td>
                     </tr>
                     <tr>
-                        <td style="width:20em;font-size:120%;color:red;"><strong>Order Total</Strong></td>
+                        <td style="width:20em;font-size:120%;color:red;"><strong>Order Total</strong></td>
                         <td style="width:10em;font-size:120%;color:red;">??? <span>$</span></td>
                     </tr>
                 </table>
             </div>
-            <div style="text-align:right;margin-top:2em;"><button class="btn btn-primary">Check Out</button></div>
+            <div style="text-align:right;margin-top:2em;"><button class="btn btn-primary" data-toggle="modal" data-target="#CheckoutModal">Check Out</button></div>
         </div>
         <div class="col-lg-3 col-sm-3">
             <div class="help pa">
@@ -261,6 +266,69 @@
         </div>
         <div class="clear"></div>
     </div>
+
+    <div class="modal fade in" id="CheckoutModal" role="dialog">
+    <div class="panel panel-default credit-card-box">
+	    <div class="panel-heading display-table" >
+	      <div class="row display-tr" >
+	        <h3 class="panel-title display-td" >Payment Details</h3>
+	        <div class="display-td" >                            
+	        <img class="img-responsive pull-right" src="../img/accepted.png" alt="">
+	        </div>
+	      </div>                    
+	    </div>
+	    <div class="panel-body">
+	      <form role="form" id="payment-form">
+	        <div class="row">
+	          <div class="col-xs-12">
+	            <div class="form-group">
+	              <label>CARD NUMBER</label>
+	              <div class="input-group">
+	                <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" required autofocus>
+	                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+	              </div>
+	            </div>                            
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-xs-7 col-md-7">
+	            <div class="form-group">
+	              <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+	              <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY">
+	            </div>
+	          </div>
+	          <div class="col-xs-5 col-md-5 pull-right">
+	            <div class="form-group">
+	              <label>CV CODE</label>
+	              <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" required>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-xs-12">
+	            <div class="form-group">
+	              <label>COUPON CODE</label>
+	              <input type="text" class="form-control" name="couponCode">
+	            </div>
+	          </div>                        
+	        </div>
+	        <div class="row">
+	          <div class="col-xs-8">
+	            <button class="btn btn-success btn-lg btn-block" type="submit">Start Subscription</button>
+	          </div>
+	          <div class="col-xs-4">
+	            <button type="button" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Close</button>
+	          </div>
+	        </div>
+	        <div class="row" style="display:none;">
+	          <div class="col-xs-12">
+	            <p class="payment-errors"></p>
+	          </div>
+	        </div>
+	      </form>
+	    </div>
+	  </div>    
+	</div>
 </div>
 
 
