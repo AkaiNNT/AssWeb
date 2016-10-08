@@ -47,23 +47,23 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#">Giỏ Hàng</a>
+                        <a class="page-scroll" href="cart">Giỏ Hàng</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Loa</a>
+                        <a class="page-scroll" href="loa">Loa</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Máy Mp3</a>
+                        <a class="page-scroll" href="mp3">Máy Mp3</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Liên Hệ</a>
+                        <a class="page-scroll" href="contact">Liên Hệ</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user pull-right"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Tài Khoản <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                             <li class="divider"></li>
-                            <li><a href="#"> Giỏ Hàng <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
+                            <li><a href="cart"> Giỏ Hàng <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
                             <li class="divider"></li>
                             <li><a href="#" >Tin Nhắn <span class="badge pull-right"> 0 </span></a></li>
                             <li class="divider"></li>

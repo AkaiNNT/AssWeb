@@ -34,111 +34,10 @@
 
 <body id="page-top">
 
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Nhom HHH</a>
-                <input type="text" class="form-control" style="width: 50%; margin-top:8px;margin-left:150px;" placeholder="Tìm kiếm">
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="../">Giỏ Hàng</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Loa</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Máy Mp3</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Liên Hệ</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user pull-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Tài Khoản <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="../cart"> Giỏ Hàng <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" >Tin Nhắn <span class="badge pull-right"> 0 </span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#LoginModal"> Đăng Nhập <span class="glyphicon glyphicon-log-in pull-right"></span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#RegisterModal">Đăng Kí <span class="glyphicon glyphicon-registration-mark pull-right"></span></a></li>
-                          </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <div class="modal fade in" id="LoginModal" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Đăng nhập</h4>
-            </div>
-            <div class="modal-body">
-                <img id="profile-img1" class="profile-img-card" src="../img/avatar_login.png" alt="">
-                <p id="profile-name1" class="profile-name-card"></p>
-                <form class="form-signin">
-                    <span id="reauth-username1" class="reauth-username"></span>
-                    <input type="text" id="inputusername1" class="form-control" placeholder="User Name" required>
-                    <input type="password" id="inputPassword1" class="form-control" placeholder="Password" required>
-                    <div id="remember1" class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember password
-                        </label>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-                </form><!-- /form -->
-                <a href="#" class="forgot-password">
-                    Forgot the password?
-                </a>
-                </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-Close" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    
-    <div class="modal fade in" id="RegisterModal" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Đăng nhập</h4>
-            </div>
-            <div class="modal-body">
-                <img id="profile-img2" class="profile-img-card" src="../img/avatar_login.png" alt="">
-                <p id="profile-name2" class="profile-name-card"></p>
-                <form class="form-signin">
-                    <span id="reauth-username2" class="reauth-username"></span>
-                    <input type="email" id="inputmail2" class="form-control" placeholder="Email" required>
-                    <input type="text" id="inputusername2" class="form-control" placeholder="User Name" required >
-                    <input type="password" id="inputPassword2" class="form-control" placeholder="Password" required>
-                    <input type="password" id="confirmPassword2" class="form-control" placeholder="Confirm Password" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
-                </form><!-- /form -->
-                </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-Close" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-  </div>
-<section class="bg-primary1"></section>
+<?php 
+      include '../php/header.php';
+?>
+<section >
 <div class="shopping-cart">
     
     <div class="row">
@@ -158,7 +57,7 @@
                     <tr>
                         <th class="Product-detail">
                             <img src="../img/Ruizu-G18.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="#" style="margin-left:5px;">Loa vi tính mini Ruizu G18</a>
+                            <a href="../product" style="margin-left:5px;">Loa vi tính mini Ruizu G18</a>
                         </th>
                         <th class="con">
                             <input type="number" name="quantity" min="1" max="10" value="1">
@@ -172,7 +71,7 @@
                     <tr>
                         <th class="Product-detail">
                             <img src="../img/mp3-PeepVn.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="#" style="margin-left:5px;">MP3 kiểu dáng Shuffle PeepVN</a>
+                            <a href="../product" style="margin-left:5px;">MP3 kiểu dáng Shuffle PeepVN</a>
                         </th>
                         <th class="con">
                             <input type="number" name="quantity" min="1" max="10" value="1">
@@ -186,7 +85,7 @@
                     <tr>
                         <th class="Product-detail">
                             <img src="../img/SoundMax.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="#" style="margin-left:5px;">Loa SoundMax A130/2.0</a>
+                            <a href="../product" style="margin-left:5px;">Loa SoundMax A130/2.0</a>
                         </th>
                         <th class="con">
                             <input type="number" name="quantity" min="1" max="10" value="1">
@@ -319,27 +218,12 @@
 	  </div>    
 	</div>
 </div>
+</section>
 
-
-<section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Liên hệ mua sản phẩm</h2>
-                    <hr class="primary">
-                    <p>Cám ơn các bạn đã tham quan website của chúng tôi!</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">HHH@gmail.com</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+<?php 
+      include '../php/footer.php';
+      include '../php/success.php';
+?>
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
