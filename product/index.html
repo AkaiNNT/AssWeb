@@ -212,7 +212,7 @@
                     </span>
                  </div>
                 <div class="col-md-6">
-                    <button class="btn btn-lg btn-model btn-full-width">Add to Cart</button>
+                    <button class="btn btn-lg btn-model btn-full-width" data-toggle="modal" data-target="#success">Add to Cart</button>
                 </div>
             </div>
             <div class="row">
@@ -276,7 +276,12 @@
             </div>
         </div>
     </section>
-
+    <div class="modal fade in" id="success" role="dialog">
+        <div class="modal-dialog success-modal">
+            <h2>Success!</h2>
+            <p>Please check your cart</p>
+        </div>
+    </div>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 

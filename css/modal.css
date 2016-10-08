@@ -125,3 +125,14 @@
     border-radius: 3px;
     background-color: rgb(12, 97, 33);
 }
+.success-modal{
+    border-radius: 4px;
+    color: #00cc00;
+    height: 120px;
+    text-align: center;
+    background-color: #fff;
+    padding-top: 10px;
+}
+.success-modal p{
+    color: black;
+}
