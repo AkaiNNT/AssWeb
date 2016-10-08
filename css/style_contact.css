@@ -1,3 +1,6 @@
+.bg-primary1 {
+  background-color: #F05F40;
+}
 .title-topic h2{
     font-size: 150%;
     font-weight: bold;
@@ -57,4 +60,7 @@
 }
 .block-info .info{
     margin-top: 15px;
+}
+.map{
+    margin-top: 20px;
 }

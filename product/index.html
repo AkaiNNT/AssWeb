@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cart page</title>
+    <title>Product detail</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/modal.css" rel="stylesheet">
     <link href="../css/dropdown.css" rel="stylesheet">
 
-    <link href="../css/cart.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -27,7 +27,13 @@
 
     <!-- Theme CSS -->
     <link href="../css/creative.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/checkout.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -138,186 +144,118 @@
         </div>
   </div>
 <section class="bg-primary1"></section>
-<div class="shopping-cart">
-    
+
+<div class="product-detail">
     <div class="row">
-        <div class="col-lg-8 col-sm-8">
-            <h2>SHOPPING CART</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Product detail</th>
-                        <th>QTY</th>
-                        <th>Price</th>
-                        <th>SubTotal</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="Product-detail">
-                            <img src="../img/product-exam.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="#" style="margin-left:5px;">Product Name</a>
-                        </th>
-                        <th class="con">
-                            <input type="number" name="quantity" min="1" max="10" value="1">
-                        </th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><a href="#">X</a></th>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th class="Product-detail">
-                            <img src="../img/product-exam.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="#" style="margin-left:5px;">Product Name</a>
-                        </th>
-                        <th class="con">
-                            <input type="number" name="quantity" min="1" max="10" value="1">
-                        </th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><a href="#">X</a></th>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th class="Product-detail">
-                            <img src="../img/product-exam.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="#" style="margin-left:5px;">Product Name</a>
-                        </th>
-                        <th class="con">
-                            <input type="number" name="quantity" min="1" max="10" value="1">
-                        </th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><a href="#">X</a></th>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="border:1px solid #333;padding:10px 20px 10px 20px;">
-	            <div class="row" >
-	
-	            	<div class="col-xs-6">
-	            		<Strong>Sub Total</Strong><br>
-	            		
-	            		<Strong>Shipping</Strong><br>
-	            		<strong>Order Total</strong>
-	            	</div>
-	            	<div class="col-xs-6" style="text-align:right;">
-	            		??? <span>$</span><br>
-	            		??? <span>$</span><br>
-	            		??? <span>$</span>
-	            	</div>
-	            </div>
-	            <div style="margin-top:5px;text-align:right;"><button class="btn btn-primary" data-toggle="modal" data-target="#CheckoutModal">Check Out</button></div>
+        <div class="col-md-6 magnify">
+            <div class="large"></div>
+            <img src="../img/product-exam.jpg" alt="" class="picture-responsive small">
+            <div class="row">
+                <div class="col-md-4"><img src=""></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
             </div>
         </div>
-        <div class="col-lg-3 col-sm-3">
-            <div class="help pa">
-                <h3>Help</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a href="#">Learn More</a>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Product name</h1>
+                </div>
             </div>
-            <div class="return pa">
-                <h3>Returns</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a href="#">Learn More</a>
+             <hr style="max-width:100%;">
+            <div class="row">
+                <div class="col-md-12">
+                  <span class="label label-main">Vintage</span>
+                  <span class="monospaced">No. 0000001</span>
+                </div>
             </div>
-            <div class="shipping pa">
-                <h3>Shipping</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <a href="#">Learn More</a>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div style="border-bottom:1px solid #333;"><h4>Sample Product</h4></div>
-    <div class="Product-same">
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/product-exam.jpg" alt="" style="height:20em;width:100%;">
-            <p>Product name</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/product-exam.jpg" alt="" style="height:20em;width:100%;">
-            <p>Product name</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/product-exam.jpg" alt="" style="height:20em;width:100%;">
-            <p>Product name</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/product-exam.jpg" alt="" style="height:20em;width:100%;">
-            <p>Product name</p>
-        </div>
-        <div class="clear"></div>
-    </div>
 
-    <div class="modal fade in" id="CheckoutModal" role="dialog">
-    <div class="panel panel-default credit-card-box">
-	    <div class="panel-heading display-table" >
-	      <div class="row display-tr" >
-	        <h3 class="panel-title display-td" >Payment Details</h3>
-	        <div class="display-td" >                            
-	        <img class="img-responsive pull-right" src="../img/accepted.png" alt="">
-	        </div>
-	      </div>                    
-	    </div>
-	    <div class="panel-body">
-	      <form role="form" id="payment-form">
-	        <div class="row">
-	          <div class="col-xs-12">
-	            <div class="form-group">
-	              <label>CARD NUMBER</label>
-	              <div class="input-group">
-	                <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" required autofocus>
-	                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-	              </div>
-	            </div>                            
-	          </div>
-	        </div>
-	        <div class="row">
-	          <div class="col-xs-7 col-md-7">
-	            <div class="form-group">
-	              <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-	              <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY">
-	            </div>
-	          </div>
-	          <div class="col-xs-5 col-md-5 pull-right">
-	            <div class="form-group">
-	              <label>CV CODE</label>
-	              <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" required>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="row">
-	          <div class="col-xs-12">
-	            <div class="form-group">
-	              <label>COUPON CODE</label>
-	              <input type="text" class="form-control" name="couponCode">
-	            </div>
-	          </div>                        
-	        </div>
-	        <div class="row">
-	          <div class="col-xs-8">
-	            <button class="btn btn-success btn-lg btn-block" type="submit">Start Subscription</button>
-	          </div>
-	          <div class="col-xs-4">
-	            <button type="button" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Close</button>
-	          </div>
-	        </div>
-	        <div class="row" style="display:none;">
-	          <div class="col-xs-12">
-	            <p class="payment-errors"></p>
-	          </div>
-	        </div>
-	      </form>
-	    </div>
-	  </div>    
-	</div>
+            <div class="row">
+                <div class="col-md-12">
+                  <p class="description">
+                   Classic movie digital camera. Uses 620 roll movie.Has a PxO inch picture measurement.
+                  </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                         <div class="col-md-3">
+                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                              <span class="label label-success">100</span>
+                         </div>
+                         <div class="col-md-9">
+                            <span class="monospaced">Write a Review</span>
+                         </div>
+                    </div>
+                </div>
+            </div>
+             <hr style="max-width:100%;">
+            <div class="row">
+                <div class="col-md-12 backside-rule">
+                    <h2 class="product-worth">$100.00</h2>
+                </div>
+            </div>
+            <hr style="max-width:100%;">
+            <div class="row add-to-cart">
+                 <div class="col-md-6 product-qty">
+                    <span class="btn btn-default btn-lg btn-qty">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </span>
+                    <enter class="btn btn-default btn-lg btn-qty" worth="1">1</enter>
+                    <span class="btn btn-default btn-lg btn-qty">
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </span>
+                 </div>
+                <div class="col-md-6">
+                    <button class="btn btn-lg btn-model btn-full-width">Add to Cart</button>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="col-md-6 textual content-middle">
+                    <span class="monospaced" style="margin-left:55px;">In Stock</span>
+                 </div>
+                 <div class="col-md-6 textual content-middle">
+                     <a category="monospaced" href="#">Add to Shopping List</a>
+                 </div>
+            </div>
+            <hr style="max-width:100%;">
+            <div class="row">
+                <div class="col-md-12 backside-rule prime-10"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 prime-10">
+                    <p>To order by phone, <a href="#">please name 123-456-789</a></p>
+                </div>
+            </div>
+            <ul class="nav nav-tabs" position="tablist">
+                <li position="presentation" class="lively">
+                  <a href="#description" aria-controls="description" position="tab" knowledge-toggle="tab">Description</a>
+                </li>
+                <li position="presentation">
+                  <a href="#options" aria-controls="options" position="tab" knowledge-toggle="tab">Features</a>
+                 </li>
+                 <li position="presentation">
+                  <a href="#notes" aria-controls="notes" position="tab" knowledge-toggle="tab">Notes</a>
+                 </li>
+                 <li position="presentation">
+                  <a href="#evaluations" aria-controls="evaluations" position="tab" knowledge-toggle="tab">Reviews</a>
+                 </li>
+            </ul>
+            <div position="tabpanel" class="tab-pane lively" id="description">
+                 <p class="prime">The 'Brownie' Flash C is a field digital camera taking P&frac14; × A&frac14;" frames on 620 movie, made from sheet metallic by Kodak Ltd. in England, 1958-60. A extra luxurious model of the Brownie Six-20 Model E, it has a two-velocity shutter (B/eighty, B/forty +B), an in depth-focus (H-10ft) lens, a yellow filter and flash sync. The Flash B is similar to the Brownie Flash IV, including a two-velocity shutter however missing a tripod bush.</p>
+                 <p>
+            </div>
+
+        </div>
+    </div>
 </div>
-
 
 <section id="contact">
         <div class="container">
@@ -349,9 +287,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
+    <script src="../js/product.js"></script>
 
 </body>
 

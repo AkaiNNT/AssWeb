@@ -1,0 +1,53 @@
+.bg-primary1 {
+  background-color: #F05F40;
+}
+.picture-responsive{
+	width: 90%;
+	height: 500px;
+	margin-left: 5%;
+	border:1px solid black;
+}
+.product-detail .lagre{
+	width: 175px; 
+	height: 175px;
+	position: absolute;
+	border-radius: 100%;
+	/*Multiple box shadows to achieve the glass effect*/
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	
+	/*Lets load up the large image first*/
+	background: url('../img/product-exam.jpg') no-repeat;
+	
+	/*hide the glass by default*/
+	display: none;
+}
+.product-detail .small { display: block; }
+.add-to-cart .btn-qty{ 
+  width: 52px;
+}
+.add-to-cart .btn{
+	border-radius: 0px;
+} 
+.label-main{
+	background-color: blue;
+}
+.btn-full-width{
+	background-color: #333;
+	color: white;
+}
+.btn-full-width:hover{
+	background-color: #333;
+	color: white;
+}
+.prime{
+	font-size: 14px;
+	text-align: justify;
+}
+.row{
+	margin-top: 5px;
+}
+.product-qty .btn-qty{
+	border: 1px solid black;
+}
