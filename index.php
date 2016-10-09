@@ -39,7 +39,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html">Nhom HHH</a>
+                <a class="navbar-brand page-scroll" href="index.php">Nhom HHH</a>
                 <input type="text" class="form-control" style="width: 50%; margin-top:8px;margin-left:150px;" placeholder="Tìm kiếm">
             </div>
 
@@ -138,7 +138,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Slide trưng bày sản phẩm nổi bật</h1>
+                <h1 id="homeHeading">Loa/Mp3 cho cuộc sống của bạn</h1>
                 <hr>
                 <p>Sản phẩm của nhóm HHH</p>
                 <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
@@ -153,8 +153,8 @@
                     <h2 class="section-heading">Chúng tôi có tất của những gì bạn cần!</h2>
                     <hr class="light">
                     <p class="text-faded">Được thành lập từ năm 2016, chúng tôi cung cấp cho các bạn đầy đủ các sản phẩm loa và mp3 tốt nhất! Đáp ứng tất cả nhu cầu của khách hàng là phương châm của chúng tôi. Hi vọng các bạn sẽ tìm được sản phẩm ưng ý cho mình!</p>
-                    <a href="loa/index.html" class="page-scroll btn btn-default btn-xl sr-button">Xem các sản phẩm loa!</a>
-                    <a href="mp3/index.html" class="page-scroll btn btn-default btn-xl sr-button">Xem các sản phẩm mp3!</a>
+                    <a href="loa/index.php" class="page-scroll btn btn-default btn-xl sr-button">Xem các sản phẩm loa!</a>
+                    <a href="mp3/index.php" class="page-scroll btn btn-default btn-xl sr-button">Xem các sản phẩm mp3!</a>
                 </div>
             </div>
         </div>

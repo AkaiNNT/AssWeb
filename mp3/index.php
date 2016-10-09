@@ -60,11 +60,11 @@
       </div>
     </section>
 
-    <!-- <section id="services">
+    <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Các loại sản phẩm</h2>
+                    <h2 class="section-heading">Sắp xếp các sản phẩm theo</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -74,38 +74,38 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Loa có dây</h3>
-                        <p class="text-muted">Trưng bày các loại loa có dây.</p>
+                        <h3>Top được mua</h3>
+                        <p class="text-muted">Các sản phẩm có lượt mua nhiều nhất</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Loa không dây</h3>
-                        <p class="text-muted">Trưng bày các sản phẩm loa không dây</p>
+                        <h3>Giá sản phẩm</h3>
+                        <p class="text-muted">Trưng bày các sản phẩm theo giá của sản phẩm</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Mp3</h3>
-                        <p class="text-muted">Trưng bày các sản phẩm mp3</p>
+                        <h3>Hãng sản xuất</h3>
+                        <p class="text-muted">Trưng bày các sản phẩm theo hãng sản xuất</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Các loại sản phẩm khác</h3>
-                        <p class="text-muted">Trưng bày các loại sản phẩm khác</p>
+                        <h3>Top bình chọn</h3>
+                        <p class="text-muted">Trưng bày các loại sản phẩm theo lượt bình chọn của khách hàng</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
   <section>
     <div class="container">
       <div class="well well-sm">
-          <strong>Category Title</strong>
+          <strong>Các sản phẩm loa</strong>
           <div class="btn-group">
               <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
               </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
