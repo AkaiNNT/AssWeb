@@ -48,14 +48,21 @@
     <div class="row">
         <div class="col-md-6 magnify">
             <div class="large"></div>
-            <img src="../img/ebus-818.jpg" alt="" class="picture-responsive small">
-            <div class="row">
-                <div class="col-md-4"><img src=""></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
+            <img src="../img/ebus-818.jpg" alt="" id="show-picture" class="picture-responsive small">
+            <div class="row-click">
+                <div class="img-click"><img src="../img/ebus-818.jpg" alt=""></div>
+                <div class="img-click img-click1"><img src="../img/R-010A.jpg" alt="" onclick="myfunction(this)"></div>
+                <div class="img-click img-click1"><img src="../img/Ruizu-G18.jpg" alt="" onclick="myfunction(this)"></div>
+                <div class="img-click img-click1"><img src="../img/SoundMax.jpg" alt="" onclick="myfunction(this)"></div>
+                <div class="clear"></div>
             </div>
         </div>
+        <script type="text/javascript">
+            function myfunction(id){
+                var x = id.src;
+                document.getElementById("show-picture").src = x ;  
+            }
+        </script>
         <div class="col-md-6">
             <div class="row">
                 <div class="col-md-12">
@@ -172,7 +179,6 @@
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="../js/creative.min.js"></script>
-    <script src="../js/product.js"></script>
 
 </body>
 
