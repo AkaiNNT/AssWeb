@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -386,6 +389,15 @@
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+    <?php
+        if(!isset($_SESSION['username'])){ 
+            echo "<script> 
+                    $(document).ready(function(){
+                        $('#LoginModal').modal('show'); 
+                    });
+                  </script>";
+        }
+    ?>
     <script src="../js/mp3.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -397,6 +409,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
+    <script src="../js/modal2.js"></script>
 
 </body>
 

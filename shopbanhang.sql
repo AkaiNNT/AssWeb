@@ -3,9 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2016 at 05:17 PM
+-- Generation Time: Nov 10, 2016 at 06:39 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.37
+CREATE DATABASE `shopbanhang`;
+USE `shopbanhang`;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -70,7 +72,7 @@ CREATE TABLE `product` (
   `Price` int(10) NOT NULL,
   `Type` varchar(4) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Class` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `PostDay` datetime NOT NULL,
+  `PostDay` date NOT NULL,
   `Link` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -99,9 +101,17 @@ CREATE TABLE `user` (
   `Password` varchar(15) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `FullName` varchar(30) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Birthday` datetime DEFAULT NULL,
+  `Birthday` date DEFAULT NULL,
   `Address` varchar(50) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Birthday`, `Address`) VALUES
+(1, 'Hung', '12345', 'h@gmai.com', 'Hong Quang Hung', NULL, NULL),
+(7, 'abc', '123', 'game@ya.com', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -141,7 +151,9 @@ ALTER TABLE `rating`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Username` (`Username`),
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -176,7 +188,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

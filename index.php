@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -66,8 +69,16 @@
                             <li><a href="cart"> Giỏ Hàng <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
                             <li class="divider"></li>
                             <li><a href="#" >Tin Nhắn <span class="badge pull-right"> 0 </span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#LoginModal"> Đăng Nhập <span class="glyphicon glyphicon-log-in pull-right"></span></a></li>
+                            <?php
+                            if(!isset($_SESSION['username'])){ 
+                                echo "<li class='divider'></li>
+                                      <li><a href='#' data-toggle='modal' data-target='#LoginModal'> Đăng Nhập <span class='glyphicon glyphicon-log-in pull-right'></span></a></li>";
+                            }
+                            else{
+                                echo "<li class='divider'></li>
+                                      <li id='logout'><a href='#' data-toggle='modal'> Đăng Xuất <span class='glyphicon glyphicon-log-out pull-right'></span></a></li>";
+                            }
+                            ?>
                             <li class="divider"></li>
                             <li><a href="#" data-toggle="modal" data-target="#RegisterModal">Đăng Kí <span class="glyphicon glyphicon-registration-mark pull-right"></span></a></li>
                           </ul>
@@ -90,17 +101,22 @@
                 <p id="profile-name1" class="profile-name-card"></p>
                 <form class="form-signin">
                     <span id="reauth-username1" class="reauth-username"></span>
+                    <span id="login-warmning" style="color:#ffd11a;"></span>
+                    <span id="login-error" style="color:red;"></span>
                     <input type="text" id="inputusername1" class="form-control" placeholder="User Name" required>
                     <input type="password" id="inputPassword1" class="form-control" placeholder="Password" required>
                     <div id="remember1" class="checkbox">
                         <label>
-                            <input type="checkbox" value="remember-me"> Remember password
+                            <input type="checkbox" value="remember-me" id="rememberbox"> Remember password
                         </label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                    <input class="btn btn-lg btn-primary btn-block btn-signin" id="buttonlogin" value="Sign In">
                 </form><!-- /form -->
                 <a href="#" class="forgot-password">
                     Forgot the password?
+                </a>
+                <a href="#" class="forgot-password" data-toggle="modal" data-target="#RegisterModal">
+                    Sign In New Account !
                 </a>
                 </div>
             <div class="modal-footer">
@@ -120,12 +136,17 @@
                 <img id="profile-img2" class="profile-img-card" src="img/avatar_login.png" alt="">
                 <p id="profile-name2" class="profile-name-card"></p>
                 <form class="form-signin">
+                    
+                    <span id="register-error" style="color:red;"></span>
+                    <span id="register-warmning" style="color:#ffd11a;"></span>
                     <span id="reauth-username2" class="reauth-username"></span>
                     <input type="email" id="inputmail2" class="form-control" placeholder="Email" required>
+                   
                     <input type="text" id="inputusername2" class="form-control" placeholder="User Name" required >
                     <input type="password" id="inputPassword2" class="form-control" placeholder="Password" required>
+                    
                     <input type="password" id="confirmPassword2" class="form-control" placeholder="Confirm Password" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
+                    <input class="btn btn-lg btn-primary btn-block btn-signin" id="buttonsign" value="Register">
                 </form><!-- /form -->
                 </div>
             <div class="modal-footer">
@@ -236,7 +257,15 @@
     </section>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
-
+    <?php
+        if(!isset($_SESSION['username'])){ 
+            echo "<script> 
+                    $(document).ready(function(){
+                        $('#LoginModal').modal('show'); 
+                    });
+                  </script>";
+        }
+    ?>
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -247,6 +276,7 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+    <script src="js/modal.js"></script>
 
 </body>
 

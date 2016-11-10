@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -227,6 +230,11 @@
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+    <?php
+        echo "<script> 
+                    window.location.href = 'http://localhost/AssWeb/';
+              </script>";
+    ?>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -238,6 +246,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
+    <script src="../js/modal2.js"></script>
 
 </body>
 

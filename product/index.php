@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -170,6 +173,15 @@
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+    <?php
+        if(!isset($_SESSION['username'])){ 
+            echo "<script> 
+                    $(document).ready(function(){
+                        $('#LoginModal').modal('show'); 
+                    });
+                  </script>";
+        }
+    ?>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -179,6 +191,7 @@
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="../js/creative.min.js"></script>
+    <script src="../js/modal2.js"></script>
 
 </body>
 
