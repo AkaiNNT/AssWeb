@@ -231,9 +231,11 @@
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <?php
-        echo "<script> 
-                    window.location.href = 'http://localhost/AssWeb/';
-              </script>";
+        if(!isset($_SESSION['username'])){ 
+            echo "<script> 
+                        window.location.href = 'http://localhost/AssWeb/';
+                  </script>";
+        }
     ?>
 
     <!-- Bootstrap Core JavaScript -->
