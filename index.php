@@ -203,13 +203,13 @@
       <div class="carousel-inner" role="listbox">
         <div class="item active item1">
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
           </div>
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
           </div>
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
           </div>
           <div class="carousel-caption">
             ...
@@ -217,13 +217,13 @@
         </div>
         <div class="item item1">
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
           </div>
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
           </div>
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
           </div>
           <div class="carousel-caption">
             ...
@@ -231,13 +231,13 @@
         </div>
         <div class="item item1">
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
           </div>
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
           </div>
           <div class="col-md-4">
-            <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
           </div>
           <div class="carousel-caption">
             ...
