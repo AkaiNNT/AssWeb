@@ -62,3 +62,12 @@
 .product-qty .btn-qty{
 	border: 1px solid black;
 }
+.ac{
+	font-size: 80%;
+}
+.user{
+	margin-bottom:15px;
+}
+.clear{
+	clear: bold;
+}

@@ -6,8 +6,20 @@
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
+    height: 360px
 }
-
+.thumbnail:hover
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 2px solid black;
+}
+.thumbnail img{
+    height: 222px;
+}
 .item.list-group-item
 {
     float: none;
@@ -57,4 +69,13 @@
 }
 .btn-success{
     border-radius: 0px;
+}
+.loading-info{
+    text-align:center;
+}
+.caption h5{
+    color: red;
+}
+.caption .btn-success{
+    width: 100%;
 }

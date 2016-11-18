@@ -49,9 +49,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="cart">Giỏ Hàng</a>
-                    </li>
+                    <?php
+                        if(isset($_SESSION['username'])){
+                            echo '<li><a class="page-scroll" href="cart">Giỏ Hàng</a></li>';
+                        }
+                    ?>
+                    
                     <li>
                         <a class="page-scroll" href="loa">Loa</a>
                     </li>
@@ -64,7 +67,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user pull-right"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Tài Khoản <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                            <li><a href="#">
+                            <?php
+                                if(isset($_SESSION['username'])){
+                                    echo $_SESSION['username'];
+                                }
+                                else echo 'Tài Khoản';
+                            ?>
+                            <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                             <li class="divider"></li>
                             <li><a href="cart"> Giỏ Hàng <span class="glyphicon glyphicon-shopping-cart pull-right"></span></a></li>
                             <li class="divider"></li>
@@ -257,15 +267,6 @@
     </section>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <?php
-        if(!isset($_SESSION['username'])){ 
-            echo "<script> 
-                    $(document).ready(function(){
-                        $('#LoginModal').modal('show'); 
-                    });
-                  </script>";
-        }
-    ?>
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 

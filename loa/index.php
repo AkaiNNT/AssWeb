@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Các sản phẩm mp3</title>
+    <title>Các sản phẩm Loa</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -106,6 +106,7 @@
     </section>
   <section>
     <div class="container">
+    <h3 id="num-show"></h3>
       <div class="well well-sm">
           <strong>Các sản phẩm loa</strong>
           <div class="btn-group">
@@ -115,288 +116,21 @@
           </div>
       </div>
       <div id="products" class="row list-group">
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div id="products" class="row list-group">
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-4 col-lg-4">
-              <div class="thumbnail">
-                  <img class="group list-group-image" src="../img/loa-edifier.jpg" alt="" >
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          Loa Edifier chính hãng</h4>
-                      
-                      <div class="row">
-                          <div class="col-xs-12 col-md-4">
-                              <p class="lead">
-                                  $21.000</p>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="#/" data-toggle="modal" data-target="#success">Add to cart</a>
-                          </div>
-                          <div class="col-xs-12 col-md-4">
-                            <a class="btn btn-success" href="../product">Details</a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+
+
+
       </div>
+      <div class="loading-info"><img src="../img/ajax-loader.gif" /></div>
   </div>
   </section>
     <?php 
       include '../php/footer.php';
       include '../php/success.php';
+      include '../php/error.php';
     ?>
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
-    <?php
-        if(!isset($_SESSION['username'])){ 
-            echo "<script> 
-                    $(document).ready(function(){
-                        $('#LoginModal').modal('show'); 
-                    });
-                  </script>";
-        }
-    ?>
     <script src="../js/mp3.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -408,6 +142,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
+    <script src="../js/loadpage1.js"></script>
     <script src="../js/modal2.js"></script>
 
 </body>
