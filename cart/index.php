@@ -32,33 +32,6 @@
     <link href="../css/creative.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/checkout.css">
     <link href="../css/home.css" rel="stylesheet">
-    <script type="text/javascript">
-        function product(id){
-            $.ajax({
-                url: '../php/product-details.php',
-                type: "post",
-                data:{
-                    'id':id,
-                },
-                success: function(str){
-                    window.location.href = 'http://localhost/AssWeb/product';
-                }
-            });
-        }
-        function del(id){
-            alert("ok");
-            $.ajax({
-                url: '../php/DelProductInCart.php',
-                type: "post",
-                data:{
-                    'id':id,
-                },
-                success: function(str){
-                    $("#"+id.toString()).remove();
-                }
-            });
-        }
-    </script>
 
 </head>
 
@@ -96,9 +69,9 @@
 	            		<strong>Thanh Toán</strong>
 	            	</div>
 	            	<div class="col-xs-6" style="text-align:right;">
-	            		??? <span>$</span><br>
-	            		??? <span>$</span><br>
-	            		??? <span>$</span>
+	            		<span id="Total"></span><span>  VNĐ</span><br>
+	            		<span id="Shipping"></span><span>  VNĐ</span><br>
+	            		<span id="Order"></span><span>  VNĐ</span>
 	            	</div>
 	            </div>
 	            <div style="margin-top:5px;text-align:right;"><button class="btn btn-primary" data-toggle="modal" data-target="#CheckoutModal">Check Out</button></div>
