@@ -32,6 +32,33 @@
     <link href="../css/creative.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/checkout.css">
     <link href="../css/home.css" rel="stylesheet">
+    <script type="text/javascript">
+        function product(id){
+            $.ajax({
+                url: '../php/product-details.php',
+                type: "post",
+                data:{
+                    'id':id,
+                },
+                success: function(str){
+                    window.location.href = 'http://localhost/AssWeb/product';
+                }
+            });
+        }
+        function del(id){
+            alert("ok");
+            $.ajax({
+                url: '../php/DelProductInCart.php',
+                type: "post",
+                data:{
+                    'id':id,
+                },
+                success: function(str){
+                    $("#"+id.toString()).remove();
+                }
+            });
+        }
+    </script>
 
 </head>
 
@@ -46,68 +73,27 @@
     <div class="row">
         <div class="col-lg-8 col-sm-8">
             <h2>SHOPPING CART</h2>
-            <table class="table table-striped">
+            <table class="table table-striped" id="table-cart">
                 <thead>
                     <tr>
-                        <th>Product detail</th>
-                        <th>QTY</th>
-                        <th>Price</th>
-                        <th>SubTotal</th>
-                        <th>Remove</th>
+                        <th>Sản Phẩm</th>
+                        <th>Số Lượng</th>
+                        <th>Giá</th>
+                        <th>Tổng Cộng</th>
+                        <th>Xóa</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th class="Product-detail">
-                            <img src="../img/Ruizu-G18.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="../product" style="margin-left:5px;">Loa vi tính mini Ruizu G18</a>
-                        </th>
-                        <th class="con">
-                            <input type="number" name="quantity" min="1" max="10" value="1">
-                        </th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><a href="#">X</a></th>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th class="Product-detail">
-                            <img src="../img/mp3-PeepVn.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="../product" style="margin-left:5px;">MP3 kiểu dáng Shuffle PeepVN</a>
-                        </th>
-                        <th class="con">
-                            <input type="number" name="quantity" min="1" max="10" value="1">
-                        </th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><a href="#">X</a></th>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr>
-                        <th class="Product-detail">
-                            <img src="../img/SoundMax.jpg" alt="" style="height:80px;width:80px;">
-                            <a href="../product" style="margin-left:5px;">Loa SoundMax A130/2.0</a>
-                        </th>
-                        <th class="con">
-                            <input type="number" name="quantity" min="1" max="10" value="1">
-                        </th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><p>10<span>$</span></p></th>
-                        <th class="con"><a href="#">X</a></th>
-                    </tr>
-                </tbody>
+                
                
             </table>
             <div style="border:1px solid #333;padding:10px 20px 10px 20px;">
 	            <div class="row" >
 	
 	            	<div class="col-xs-6">
-	            		<Strong>Sub Total</Strong><br>
+	            		<Strong>Tổng tiền</Strong><br>
 	            		
 	            		<Strong>Shipping</Strong><br>
-	            		<strong>Order Total</strong>
+	            		<strong>Thanh Toán</strong>
 	            	</div>
 	            	<div class="col-xs-6" style="text-align:right;">
 	            		??? <span>$</span><br>
@@ -137,7 +123,7 @@
         </div>
         <div class="clear"></div>
     </div>
-    <div style="border-bottom:1px solid #333;"><h4>Sample Product</h4></div>
+    <div style="border-bottom:1px solid #333;"><h4>Sản phẩm liên quan</h4></div>
     <div class="Product-same">
         <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
             <img src="../img/mp3-Mini.jpg" alt="" style="height:20em;width:100%;">
@@ -248,6 +234,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
+    <script src="../js/cart.js"></script>
     <script src="../js/modal2.js"></script>
 
 </body>

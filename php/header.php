@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                         if(isset($_SESSION['username'])){
-                            echo '<li><a class="page-scroll" href="cart">Giỏ Hàng</a></li>';
+                            echo '<li><a class="page-scroll" href="../cart">Giỏ Hàng</a></li>';
                         }
                     ?>
                     <li>
