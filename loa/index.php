@@ -34,12 +34,6 @@
     <link href="../css/creative.css" rel="stylesheet">
     <link href="../css/mp3.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -62,7 +56,7 @@
         </div>
       </div>
     </section>
-  <section id="services">
+  <section id="services" style="padding-bottom: 0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -73,28 +67,28 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 text-center search-method">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
                         <h3>Top được mua</h3>
                         <p class="text-muted">Các sản phẩm có lượt mua nhiều nhất</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 text-center search-method">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
                         <h3>Giá sản phẩm</h3>
                         <p class="text-muted">Trưng bày các sản phẩm theo giá của sản phẩm</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 text-center search-method">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
                         <h3>Hãng sản xuất</h3>
                         <p class="text-muted">Trưng bày các sản phẩm theo hãng sản xuất</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-3 col-md-6 text-center search-method">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
                         <h3>Top bình chọn</h3>
@@ -105,7 +99,7 @@
         </div>
     </section>
   <section>
-    <div class="container">
+    <div class="container" style="padding-top:0;padding-bottom: 0">
     <h3 id="num-show"></h3>
       <div class="well well-sm">
           <strong>Các sản phẩm loa</strong>
@@ -143,6 +137,7 @@
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
     <script src="../js/loadpage1.js"></script>
+    <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
 
 </body>

@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Các sản phẩm mp3</title>
+    <title>Trang Tìm kiếm</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <section id="services" style="padding-bottom: 0">
+    <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -99,7 +99,7 @@
         </div>
     </section>
   <section>
-    <div class="container" style="padding-top:0;padding-bottom: 0">
+    <div class="container">
       <h3 id="num-show"></h3>
       <div class="well well-sm">
           <strong>Các sản phẩm loa</strong>
@@ -133,7 +133,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
-    <script src="../js/loadpage2.js"></script>
+    <script src="../js/search.js"></script>
     <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
 

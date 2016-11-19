@@ -79,3 +79,10 @@
 .caption .btn-success{
     width: 100%;
 }
+.search-method{
+    height: 255px;
+}
+.search-method:hover{
+    height: 255px;
+    background-color:#d9d9d9;
+}

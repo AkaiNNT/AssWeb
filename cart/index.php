@@ -208,6 +208,7 @@
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
     <script src="../js/cart.js"></script>
+    <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
 
 </body>

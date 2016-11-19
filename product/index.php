@@ -224,6 +224,7 @@
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="../js/creative.min.js"></script>
     <script src="../js/product-detail.js"></script>
+    <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
 
 </body>
