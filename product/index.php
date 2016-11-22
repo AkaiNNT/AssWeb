@@ -172,34 +172,18 @@
 </section>
 <section>
     <div class="container">
-        <div><p style="font-size:150%;">0 <span>Bình Luận<span></span></p></div>
+        <div><p style="font-size:150%;"><span id="number-comment">0</span> <span>Bình Luận<span></span></p></div>
         <hr style="max-width:100%;">
         <div id="comment">
             <div id="commeny-box">
                 <div class="col-md-1" style="padding:5px"><img src="../img/avatar_login.png" alt="" style="width:90px;height:90px"></div>
                 <div class="col-md-11" style="padding:5px">
                   <textarea class="form-control" id = "mycomment" rows="4"></textarea><br>
-                  <div style="text-align:right;"><button class="btn btn-lg btn-primary" style="border-radius:2px;width:150px;">Post</button></div>
+                  <div style="text-align:right;"><button class="btn btn-lg btn-primary" id="Btn-Comment" style="border-radius:2px;width:150px;">Post</button></div>
                 </div>
                 <div id ="list-comment">
-                    <div class="user">
-                        <div class="col-md-1"><img src="../img/avatar_login.png" alt="" style="width:90px;height:90px"></div>
-                        <div class="col-md-11" style="padding-left:20px;">
-                          <a href="#" style="font-size:125%;color:red;">Quang Hưng</a><br>
-                          <p>Sản phẩm xài quá tốt !</p>
-                          <a href="#" class="ac">Like</a><span> - </span><a href="#" class="ac">Reply</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="user">
-                        <div class="col-md-1"><img src="../img/avatar_login.png" alt="" style="width:90px;height:90px"></div>
-                        <div class="col-md-11" style="padding-left:20px;">
-                          <a href="#" style="font-size:125%;color:red;">Quang Hưng</a><br>
-                          <p>Sản phẩm xài quá tốt !</p>
-                          <a href="#" class="ac">Like</a><span> - </span><a href="#" class="ac">Reply</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+
+                    
                 </div>
             </div>
         </div>

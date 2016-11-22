@@ -8,7 +8,7 @@
 	$dbhandle = mysqli_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
 	//select a database to work with
 	$selected = mysqli_select_db($dbhandle, "shopbanhang") or die("Could not select shopbanhang");
-	mysql_query("SET NAMES utf8");
+	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
 	$method = $_SESSION['method'];
 	$x = $_SESSION['x'];
@@ -24,13 +24,16 @@
 	}
 	elseif ($method == '3') { // theo hãng sản xuất
 		$GLOBALS['result'] = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Type,Class,PostDay FROM product WHERE Type = $z AND Class = $x");
-	} 
+	}
+	else{ // rating
+
+	}
 	
 
 	$data = array();
 	if($result->num_rows >0){
 		while ($row = mysqli_fetch_array($GLOBALS['result'])){ 
-		    $data[] = array_map('utf8_encode', $row);
+		    $data[] = $row;
 		}
 	}
 	echo json_encode($data);

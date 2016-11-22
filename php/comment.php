@@ -10,15 +10,16 @@
 	$selected = mysqli_select_db($dbhandle, "shopbanhang") or die("Could not select shopbanhang");
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
+	$pid = $_SESSION['productID'];
 	$uid = $_SESSION['userId'];
-
-
-	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT product.ID,product.Name,product.Price,product.Type,cart.Number FROM product,cart WHERE cart.UserID = $uid AND cart.ProductID=product.ID");
+	$content = $_POST['content'];
+	
+	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO comment VALUES(NULL,$pid,$uid,\"$content\",NULL)");
+	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT comment.ID,user.Username,comment.content,comment.Time FROM comment,user WHERE user.ID=comment.UserID ORDER BY Time DESC LIMIT 1");
 	
 	$data = array();
 	while ($row = mysqli_fetch_array($GLOBALS['result1'])){ 
 	    $data[] = $row;
 	}
-	
 	echo json_encode($data);
 ?>
