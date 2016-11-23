@@ -46,15 +46,7 @@
 ?>
 <section class="my-profile">
    <div class="content profile lcol-xs-12">
-      <div class="left-profile col-xs-12 col-sm-2">
-        <div class="left-info left-left col-xs-6 col-sm-12">
-          <div class="btn-group-vertical menu">
-              <button type="button" class="btn btn-primary profile">MY ACOUNT</button>
-              <button type="button" class="btn btn-primary profile" id="setaccount">SETTING ACOUNT</button>
-          </div>
-        </div>
-      </div>
-      <div class="center-profile col-xs-10 col-sm-8">
+      <div class="left-profile col-xs-10 col-sm-8">
           <div class=" form-dangky col-xs-12 col-sm-12">
               <div class="title-topic">
                   <h3 class="title-profile"><b>MY PROFILE</b></h3>
@@ -70,34 +62,21 @@
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
+                        <td>Username:</td>
+                        <td>Tran Thi Hoa</td>
                       </tr>
                       <tr>
-                        <td>Hire date:</td>
-                        <td>06/23/2013</td>
+                        <td>Birthday:</td>
+                        <td>17/04/1995</td>
                       </tr>
-                      <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/1988</td>
-                      </tr>
-                      <tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td>Female</td>
-                        </tr>
-                       <tr>
-                            <td>Home Address</td>
-                            <td>Kathmandu,Nepal</td>
-                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                        <td>hoatran.bkit@gmail.com</td>
                       </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>           
-                      </tr>   
+                      <tr>
+                        <td>Adress</td>
+                        <td>Ho Chi Minh</td>
+                      </tr>  
                     </tbody>
                   </table>
                 </div>
@@ -105,8 +84,26 @@
             </div>
           </div>
       </div>
+
+      <button type="button" class="btn btn-primary profile" id="setaccount">EDIT ACOUNT</button>
+
+      <table class="form-profile">
+        <tr>
+          <td>First name </td>
+          <td colspan="6"><input type="text" name="fname"></td>
+        </tr>
+        <tr>
+          <td>Last name</td>
+          <td colspan="6"><input type="text" name="lname"></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td colspan="6"><input type="email" name="email"></td>
+        </tr>
+      </table> 
+
     </div>
-    <div class="right-profile col-xs-12 col-sm-2">
+    <div class="right-profile col-xs-12 col-sm-4">
         <div class="right-info left-left col-xs-6 col-sm-12">
         </div>
       </div>

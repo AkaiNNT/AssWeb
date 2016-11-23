@@ -7,29 +7,24 @@
 }
 .content .left-profile{
 	height: 600px;
-	background-image: url(../img/bg7.jpg);
-	background-size: cover!important;
-	margin-top: -49px;
-    margin-left: 0px;
-}
-.content .center-profile{
-	height: 600px;
-	background-color: rgb(14, 179, 145);
-	background-size: cover!important;
+	/*background-color: rgb(14, 179, 145);
+	background-size: cover!important;*/
 	margin-top: -49px;
     margin-left: 0px;
 }
 .content .right-profile{
 	height: 600px;
 	margin-top: -49px;
-	background-image: url(../img/bg7.jpg);
-	background-size: cover!important;
+	/*background-image: url(../img/bg7.jpg);
+	background-size: cover!important;*/
 }
 .btn.btn-primary.profile{
 	margin-top: 15px;
 	border-radius: 5px!important;
+	margin-left: 15px;
 }
 .title-profile{
 	padding-left: 320px;
     padding-bottom: 10px;
+    color: 	rgb(236, 19, 19);
 }
