@@ -74,7 +74,7 @@
                         <p class="text-muted">Các sản phẩm có lượt mua nhiều nhất</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center search-method">
+                <div class="col-lg-3 col-md-6 text-center search-method" id="search-price">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
                         <h3>Giá sản phẩm</h3>

@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <section id="services">
+    <section id="services" style="padding-bottom: 0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -74,7 +74,7 @@
                         <p class="text-muted">Các sản phẩm có lượt mua nhiều nhất</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center search-method">
+                <div class="col-lg-3 col-md-6 text-center search-method" id="search-price">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
                         <h3>Giá sản phẩm</h3>
@@ -99,7 +99,7 @@
         </div>
     </section>
   <section>
-    <div class="container">
+    <div class="container" style="padding-top:0;padding-bottom: 0">
       <h3 id="num-show"></h3>
       <div class="well well-sm">
           <strong>Các sản phẩm loa</strong>
