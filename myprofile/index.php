@@ -46,12 +46,9 @@
 ?>
 <section class="my-profile">
    <div class="content profile lcol-xs-12">
-      <div class="left-profile col-xs-10 col-sm-8">
-          <div class=" form-dangky col-xs-12 col-sm-12">
-              <div class="title-topic">
-                  <h3 class="title-profile"><b>MY PROFILE</b></h3>
-              </div>
-              <div class="panel panel-info">
+      <div class="left-profile col-xs-10 col-sm-9">
+      <div class=" form-profile col-xs-12 col-sm-12">
+            <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title">Sheena Shrestha</h3>
             </div>
@@ -63,19 +60,23 @@
                     <tbody>
                       <tr>
                         <td>Username:</td>
-                        <td>Tran Thi Hoa</td>
+                        <td><input type="text" name="username" value="Tran Thi Hoa"></td>
                       </tr>
                       <tr>
                         <td>Birthday:</td>
-                        <td>17/04/1995</td>
+                        <td><input type="text" name="birthday" value="17-04-1995"></td>
                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td>hoatran.bkit@gmail.com</td>
+                        <td><input type="text" name="email" value="hoatran.bkit@gmail.com"></td>
+                      </tr>
+                      <tr>
+                        <td>Phone</td>
+                        <td><input type="text" name="phone" value="0909877666"></td>
                       </tr>
                       <tr>
                         <td>Adress</td>
-                        <td>Ho Chi Minh</td>
+                        <td><input type="text" name="adress" value="Ho Chi Minh City"></td>
                       </tr>  
                     </tbody>
                   </table>
@@ -84,29 +85,12 @@
             </div>
           </div>
       </div>
-
-      <button type="button" class="btn btn-primary profile" id="setaccount">EDIT ACOUNT</button>
-
-      <table class="form-profile">
-        <tr>
-          <td>First name </td>
-          <td colspan="6"><input type="text" name="fname"></td>
-        </tr>
-        <tr>
-          <td>Last name</td>
-          <td colspan="6"><input type="text" name="lname"></td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td colspan="6"><input type="email" name="email"></td>
-        </tr>
-      </table> 
+      <button type="button" class="btn btn-primary profile" id="setaccount">Submit Modify</button>
 
     </div>
-    <div class="right-profile col-xs-12 col-sm-4">
-        <div class="right-info left-left col-xs-6 col-sm-12">
-        </div>
-      </div>
+    <div class="right-profile col-xs-12 col-sm-3">
+    <div class="title_muahang">Lich sử mua hàng</div>
+    </div>
     </div>
 
 </section>
@@ -115,13 +99,14 @@
 ?>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
-    <script type="text/javascript">
+   <!--  <script type="text/javascript">
       $(document).ready(function(){
+        $("#form-profile-2").hide();
         $("#setaccount").click(function(){
           window.location.href ='../php/profile.php';
         });
       });
-    </script>
+    </script> -->
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
