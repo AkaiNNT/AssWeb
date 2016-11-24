@@ -1,4 +1,4 @@
-.glyphicon { margin-right:5px; }
+
 .thumbnail
 {
     margin-bottom: 20px;
@@ -81,9 +81,27 @@
 }
 .search-method{
     height: 255px;
+    cursor: default;
 }
 .search-method:hover{
     height: 255px;
     background-color:#d9d9d9;
 }
-
+.rating-xs{
+    font-size: 1.3em;
+}
+.clear-rating {
+    visibility: hidden;
+}
+.rating-disabled .rating{
+    cursor: default;
+}
+.H .col-md-5,.col-md-7{
+    padding: 0;
+}
+.lead{
+    font-size: 130%;
+}
+.clear{
+    clear: both;
+}

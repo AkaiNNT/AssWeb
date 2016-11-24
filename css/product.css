@@ -71,3 +71,6 @@
 .clear{
 	clear: bold;
 }
+.rating-disabled .rating{
+    cursor: default;
+}

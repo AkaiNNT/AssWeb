@@ -10,14 +10,18 @@
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
 	//loa
-	$result11 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay FROM product WHERE Type='loa'");
-	$result12 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay FROM product WHERE Type='loa' ORDER BY Price ASC");
-	$result13 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay FROM product WHERE Type='loa' ORDER BY Price DESC");
+	$result11 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='loa'");
+	$result12 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='loa' ORDER BY Price ASC");
+	$result13 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='loa' ORDER BY Price DESC");
+	$result14 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='loa' ORDER BY star ASC");
+	$result15 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='loa' ORDER BY star DESC");
 
 	//mp3
-	$result21 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay FROM product WHERE Type='mp3'");
-	$result22 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay FROM product WHERE Type='mp3' ORDER BY Price ASC");
-	$result23 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay FROM product WHERE Type='mp3' ORDER BY Price DESC");
+	$result21 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='mp3'");
+	$result22 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='mp3' ORDER BY Price ASC");
+	$result23 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='mp3' ORDER BY Price DESC");
+	$result24 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='mp3' ORDER BY star ASC");
+	$result25 = mysqli_query($GLOBALS['dbhandle'],"SELECT ID,Name,Price,Class,PostDay,star FROM product WHERE Type='mp3' ORDER BY star DESC");
 
 	$data = array();
 	//loa data
@@ -30,6 +34,12 @@
 	while ($row = mysqli_fetch_array($GLOBALS['result13'])){ 
 	    $data["loa"][2][] =  $row;
 	}
+	while ($row = mysqli_fetch_array($GLOBALS['result14'])){ 
+	    $data["loa"][3][] =  $row;
+	}
+	while ($row = mysqli_fetch_array($GLOBALS['result15'])){ 
+	    $data["loa"][4][] =  $row;
+	}
 	// mp3 data
 	while ($row = mysqli_fetch_array($GLOBALS['result21'])){ 
 	    $data["mp3"][0][] =  $row;
@@ -39,6 +49,12 @@
 	}
 	while ($row = mysqli_fetch_array($GLOBALS['result23'])){ 
 	    $data["mp3"][2][] =  $row;
+	}
+	while ($row = mysqli_fetch_array($GLOBALS['result24'])){ 
+	    $data["mp3"][3][] =  $row;
+	}
+	while ($row = mysqli_fetch_array($GLOBALS['result25'])){ 
+	    $data["mp3"][4][] =  $row;
 	}
 	echo json_encode($data);
 ?>

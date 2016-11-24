@@ -9,16 +9,26 @@ function getProductData() {
 		success: function(string){
 			data = JSON.parse(string);
 			var type = 'Loa';
+			var star = Math.round(parseFloat(data['product'][0].star)*10)/10;
 			if(data['product'][0].Type !='Loa') type = 'mp3';
 			var str1 = $('<img src="../img/'+type+'/'+data['product'][0].Name+'/1.jpg" alt="" id="show-picture" class="picture-responsive small">');
 			var str2 = $('<div class="row-click"><div class="img-click"><img src="../img/'+type+'/'+data['product'][0].Name+'/1.jpg" alt="" onclick="myfunction(this)"></div><div class="img-click img-click1"><img src="../img/'+type+'/'+data['product'][0].Name+'/2.jpg" alt="" onclick="myfunction(this)"></div><div class="img-click img-click1"><img src="../img/'+type+'/'+data['product'][0].Name+'/3.jpg" alt="" onclick="myfunction(this)"></div><div class="img-click img-click1"><img src="../img/'+type+'/'+data['product'][0].Name+'/4.jpg" alt="" onclick="myfunction(this)"></div><div class="clear"></div></div>');
 			$("#magnify").append(str1);
 			$("#magnify").append(str2);
+
+			$('#star-input').append('<input  value="'+star+'" class="rating" min=0 max=5 step=0.1 data-size="xs" disabled>');
+			$('#num-rating').text('  ('+data['product'][0].NumVote+' đã đánh giá) ')
 			$("#Name-product").text(data['product'][0].Name);
 			$("#number-id-product").text('No. 0000'+data['product'][0].ID.toString());
 			$("#price-product").text(data['product'][0].Price +' VNĐ');
 			var str3 = $('<p>'+data['product'][0].Description+'</p>');
 			$('#description').append(str3);
+
+			var $input = $('input.rating');
+			if ($input.length) {
+			    $input.removeClass('rating-loading').addClass('rating-loading').rating();
+			}
+
 			getCommentData();
 		}
 	});

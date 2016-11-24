@@ -18,8 +18,8 @@
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/modal.css" rel="stylesheet">
     <link href="../css/dropdown.css" rel="stylesheet">
-    <link href="../css/mp3.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
+    
     
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -32,6 +32,7 @@
 
     <!-- Theme CSS -->
     <link href="../css/creative.css" rel="stylesheet">
+    <link href="../css/star-rating.css" media="all" rel="stylesheet">
     <link href="../css/mp3.css" rel="stylesheet">
 
 
@@ -88,7 +89,7 @@
                         <p class="text-muted">Trưng bày các sản phẩm theo hãng sản xuất</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center search-method">
+                <div class="col-lg-3 col-md-6 text-center search-method" id="search-rating">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
                         <h3>Top bình chọn</h3>
@@ -136,6 +137,7 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/creative.min.js"></script>
+    <script src="../js/star-rating.js"></script>
     <script src="../js/loadpage1.js"></script>
     <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>

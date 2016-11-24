@@ -29,7 +29,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user pull-right"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">
+                            <li><a href="../myprofile">
                             <?php
                                 if(isset($_SESSION['username'])){
                                     echo $_SESSION['username'];

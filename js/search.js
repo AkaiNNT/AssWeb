@@ -29,7 +29,12 @@ $('#search-price').click(function(){
 	$('#products').text("");
 	j = 0;
 });
-
+$('#search-rating').click(function(){
+	if(typesearch ==4) typesearch = 3;
+	else typesearch = 4;
+	$('#products').text("");
+	j = 0;
+});
 
 function load_contents(){
     if(loading == false){
@@ -40,9 +45,13 @@ function load_contents(){
 			var n =3;
 			if(j+3 > data[typesearch].length) n = data[typesearch].length - j;
 			for (var i = j; i < j+n; i++) {
-			
-				var str = $('<div class="item  col-xs-4 col-lg-4"><div class="thumbnail"><img class="group list-group-image" src="../img/'+data[typesearch][i].Type+'/'+data[typesearch][i].Name+'/1.jpg" alt="" ><div class="caption"><h5 class="group inner list-group-item-heading">'+data[typesearch][i].Name+'</h5><div><p class="lead">'+data[typesearch][i].Price+' VNĐ</p></div><div class="row"><div class="col-xs-12 col-md-6"><button class="btn btn-success" data-toggle="modal" onclick="addcart('+data[typesearch][i].ID+',1)">Add to cart</button></div><div class="col-xs-12 col-md-6"><button class="btn btn-success button-product" onclick="product('+data[typesearch][i].ID+')">Details</button></div></div></div></div></div>');
+				var star = Math.round(parseFloat(data[typesearch][i].star)*10)/10;
+				var str = $('<div class="item  col-xs-4 col-lg-4"><div class="thumbnail"><img class="group list-group-image" src="../img/'+data[typesearch][i].Type+'/'+data[typesearch][i].Name+'/1.jpg" alt="" ><div class="caption"><h5 class="group inner list-group-item-heading">'+data[typesearch][i].Name+'</h5><div class="H"><div class="col-md-5"><label class="lead">'+data[typesearch][i].Price+' VNĐ</label></div><div class="col-md-7"><input value="'+star+'" type="number" class="rating" min=0 max=5 step=0.1 data-size="xs" disabled></div><div class="clear"></div></div><div class="row"><div class="col-xs-12 col-md-6"><button class="btn btn-success" data-toggle="modal" onclick="addcart('+data[typesearch][i].ID+',1)">Add to cart</button></div><div class="col-xs-12 col-md-6"><button class="btn btn-success button-product" onclick="product('+data[typesearch][i].ID+')">Details</button></div></div></div></div></div>');
 				$("#products").append(str);
+				var $input = $('input.rating');
+			    if ($input.length) {
+			        $input.removeClass('rating-loading').addClass('rating-loading').rating();
+			    }
 			}
 			$('.loading-info').hide();
 			loading = false;

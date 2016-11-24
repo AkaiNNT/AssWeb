@@ -19,7 +19,6 @@
     <link href="../css/modal.css" rel="stylesheet">
     <link href="../css/dropdown.css" rel="stylesheet">
 
-    <link href="../css/product.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -30,7 +29,9 @@
 
     <!-- Theme CSS -->
     <link href="../css/creative.css" rel="stylesheet">
+    <link href="../css/star-rating.css" media="all" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
     <script type="text/javascript">
         function addcart(pid){
           var num = parseInt($("#soluong").val());
@@ -95,17 +96,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                         <div class="col-md-3">
-                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                              <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                              <span class="label label-success">100</span>
+                         <div class="col-md-5" id ="star-input">
+
                          </div>
-                         <div class="col-md-9">
-                            <a href="#" class="monospaced">Viết đánh giá</a>
+                         <div class="col-md-7" style="padding-top:10px;">
+                            <a href="#" class="monospaced">Viết đánh giá</a> <span id="num-rating"> (100 đã đánh giá) </span>
                          </div>
+                         <div class="clear"></div>
                     </div>
                 </div>
             </div>
@@ -207,6 +204,7 @@
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="../js/creative.min.js"></script>
+    <script src="../js/star-rating.js"></script>
     <script src="../js/product-detail.js"></script>
     <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
