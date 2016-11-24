@@ -1,9 +1,9 @@
 <?php 
-	if (isset($_POST['car_id'])) {
+	if (isset($_POST['user_id'])) {
 		include('config.php');
-		$car_id = $_POST['car_id'];
+		$user_id = $_POST['user_id'];
 		try {
-			$stmt = $conn->prepare("SELECT * FROM cars WHERE id = '$car_id'");
+			$stmt = $conn->prepare("SELECT * FROM user WHERE id = '$user_id'");
 			$stmt->setFetchMode(PDO::FETCH_ASSOC);
     		$stmt->execute();
 

@@ -1,42 +1,47 @@
-function showUser() {
+function showProduct() {
     $.post(
-        'ajax/showUser.php',
+        'ajax/showProduct.php',
         {},
         function(data) {
-            $('#carTable').html(data);
+            $('#productTable').html(data);
         }
     );
 }
 
-function addUser() {
-    var user_id = $('#user_id').val();
-    var user_name = $('#user_name').val();
-    var user_email = $('#user_email').val();
-    var user_password = $('#user_password').val();
+function addProduct() {
+    var product_id = $('#product_id').val();
+    var product_name = $('#product_name').val();
+    var product_price = $('#product_price').val();
+    var product_type = $('#product_type').val();
+    var product_class = $('#product_class').val();
+    var product_description = $('#product_description').val();
 
     $.post(
-        'ajax/addUser.php',
+        'ajax/addProduct.php',
         {
-            user_id: user_id,
-            user_name: user_name,
-            user_email: user_email,
-            user_password: user_password
+            product_id: product_id,
+            product_name: product_name,
+            product_price: product_price,
+            product_type: product_type,
+            product_class: product_class,
+            product_description: product_description
         },
         function(data, status) {
-            $('#modal-add-user').modal('hide');
+            $('#modal-add-product').modal('hide');
 
-            showUser();
+            showProduct();
 
-            $('#user_id').val('');
-            $('#user_name').val('');
-            $('#user_email').val('');
-            $('#user_password').val('');
-
+            $('#product_id').val('');
+            $('#product_name').val('');
+            $('#product_price').val('');
+            $('#product_class').val('');
+            $('#product_type').val('');
+            $('#product_description').val('');
         }
     )
 }
 
-function deleteUser(user_id) {
+function deleteProduct(user_id) {
     var x = confirm('Are you sure?');
     if (x == true) {
         $.post(
@@ -51,10 +56,10 @@ function deleteUser(user_id) {
     }
 }
 
-function editUser(user_id) {
+function editProduct(user_id) {
     $('#user_id_to_edit').val(user_id);
     $.post(
-        'ajax/editUser.php',
+        'ajax/editProduct.php',
         {
             user_id: user_id
         },
@@ -67,17 +72,17 @@ function editUser(user_id) {
             $("#edit_user_fullname").val(user.FullName);
         }
     );
-    $("#modal-edit-car").modal("show");
+    $("#modal-edit-product").modal("show");
 }
 
-function saveEditCar() {
+function saveEditProduct() {
     var carID = $('#car_id_to_edit').val();
     var edit_car_id = $("#edit_car_id").val();
     var edit_car_name = $("#edit_car_name").val();
     var edit_car_year = $("#edit_car_year").val();
   
     $.post(
-        'ajax/saveEditCar.php',
+        'ajax/saveEditProduct.php',
         {
             carID: carID,
             edit_car_id: edit_car_id,
@@ -86,11 +91,11 @@ function saveEditCar() {
         },
         function (data, status) {
             $("#modal-edit-car").modal("hide");
-            showUser();
+            showProduct();
         });
 }
 
 
 $(document).ready(function() {
-    showUser();
+    showProduct();
 });

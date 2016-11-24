@@ -5,7 +5,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Year</th>
+                    <th>Email</th>
+                    <th>FullName</th>
+                    <th>Address</th>
                     <th>Action</th>
                 </tr>';
 
@@ -20,8 +22,8 @@
 		    $data .= '<td>' . $row['Email'] . '</td>';
 		    $data .= '<td>' . $row['FullName'] . '</td>';
 		    $data .= '<td>' . $row['Address'] . '</td>';
-		    
-		    $data .= '<td><button type="button" class="btn btn-primary" onclick="editCar(' . $row['id'] . ')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteCar(' . $row['id'] . ')">Delete</button></td>';
+
+		    $data .= '<td><button type="button" class="btn btn-primary" onclick="editUser(' . $row['ID'] . ')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteUser(' . $row['ID'] . ')">Delete</button></td>';
 		    $data .= '</tr>';
 		}
 		$data .= '</table>';
