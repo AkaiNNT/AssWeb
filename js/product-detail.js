@@ -17,7 +17,7 @@ function getProductData() {
 			$("#magnify").append(str2);
 
 			$('#star-input').append('<input  value="'+star+'" class="rating" min=0 max=5 step=0.1 data-size="xs" disabled>');
-			$('#num-rating').text('  ('+data['product'][0].NumVote+' đã đánh giá) ')
+			$('#num-rating').text('  ('+data['product'][0].NumVote+' người đã đánh giá) ')
 			$("#Name-product").text(data['product'][0].Name);
 			$("#number-id-product").text('No. 0000'+data['product'][0].ID.toString());
 			$("#price-product").text(data['product'][0].Price +' VNĐ');
@@ -51,7 +51,30 @@ $("#tru").click(function(){
 		$("#soluong").val((parseInt($("#soluong").val()) - 1).toString());
 	}
 });
+$("#buttonRating").click(function(){
+	var star = parseInt($('#input-rating').val());
+	if(star != 0){
+		$.ajax({	
+			url: "../php/rating.php",
+			type: "post",	
+			data:{
+				'star':star
+			},
+			success: function(string){
+				$("#RatingForm").modal('hide');
+				$('#RatingForm').on('hidden.bs.modal',function(){
+					$('#SuccessRating').modal('show');
+				});
+				$('#SuccessRating').on('shown.bs.modal',function(){
+					setTimeout(function(){
+					    window.location.href = document.URL;
+					}, 1500);
+				});
+			}
+		});
+	}
 
+});
 $('#Btn-Comment').click(function(){
 	var str = $('#mycomment').val();
 	

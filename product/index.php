@@ -16,7 +16,6 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/modal.css" rel="stylesheet">
     <link href="../css/dropdown.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -32,6 +31,7 @@
     <link href="../css/star-rating.css" media="all" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
     <link href="../css/product.css" rel="stylesheet">
+    <link href="../css/modal.css" rel="stylesheet">
     <script type="text/javascript">
         function addcart(pid){
           var num = parseInt($("#soluong").val());
@@ -100,7 +100,7 @@
 
                          </div>
                          <div class="col-md-7" style="padding-top:10px;">
-                            <a href="#" class="monospaced">Viết đánh giá</a> <span id="num-rating"> (100 đã đánh giá) </span>
+                            <a class="monospaced" id="danhgia" style="cursor: pointer">Viết đánh giá</a> <span id="num-rating"> (100 đã đánh giá) </span>
                          </div>
                          <div class="clear"></div>
                     </div>
@@ -180,7 +180,7 @@
                 </div>
                 <div id ="list-comment">
 
-                    
+                
                 </div>
             </div>
         </div>
@@ -192,13 +192,53 @@
     include '../php/success.php';
     include '../php/error.php';
 ?>
+  <div class="modal fade in" id="RatingForm" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content" style="width:418px;">
+            <div class="modal-header" style="background-color:#333">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Đánh Giá Sản Phẩm</h4>
+            </div>
+            <div class="modal-body">
+                <input  value=0 id="input-rating" type="number" class="rating" min=0 max=5 step=1 data-size="md">
+            <div class="modal-footer">
+              <input class="btn btn-lg btn-primary btn-block btn-signin" id="buttonRating" value="Đánh giá" style="background-color:#333">
+              <input class="btn btn-lg btn-primary btn-block btn-signin" data-dismiss="modal" value="Thoát" style="background-color:#333">
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    <div class="modal fade in" id="SuccessRating" role="dialog">
+        <div class="modal-dialog success-modal">
+            <h2>Success!</h2>
+            <p>Cám Ơn bạn đã đánh giá</p>
+        </div>
+    </div>
+
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript">
+    <?php
+        if(!isset($_SESSION['userId'])){
+          echo '$(document).ready(function(){
+                    $("#danhgia").click(function(){
+                        $("#LoginModal").modal("show");
+                    });
+                });';
+        }else{
+          echo '$(document).ready(function(){
+                    $("#danhgia").click(function(){
+                        $("#RatingForm").modal("show");
+                    });
+                });';
+        }
+    ?>
+    </script>
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>

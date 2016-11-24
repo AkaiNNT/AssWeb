@@ -57,4 +57,5 @@
 	    $data["mp3"][4][] =  $row;
 	}
 	echo json_encode($data);
+	mysqli_close($dbhandle);
 ?>

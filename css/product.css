@@ -74,3 +74,6 @@
 .rating-disabled .rating{
     cursor: default;
 }
+.glyphicon-minus-sign{
+	visibility: hidden;
+}
