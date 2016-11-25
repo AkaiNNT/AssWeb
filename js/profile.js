@@ -1,7 +1,54 @@
 var data = new Array();
 loadprofile();
 
+$('#apassword').click(function(){
+	$('#password').removeAttr('disabled');
+	$('#setaccount').show();
+});
+$('#afullname').click(function(){
+	$('#fullname').removeAttr('disabled');
+	$('#setaccount').show();
+});
+$('#aemail').click(function(){
+	$('#email').removeAttr('disabled');
+	$('#setaccount').show();
+});
+$('#aaddress').click(function(){
+	$('#address').removeAttr('disabled');
+	$('#setaccount').show();
+});
+$('#setaccount').click(function(){
+	var p = $('#password').val();
+	var e = $('#email').val();
+	var a = $('#address').val();
+	var f = $('#fullname').val();
+	console.log(p +" + "+e+" + "+a+" + "+f);
+	$.ajax({	
+		url: "../php/UpdateProfile.php",
+		type: "post",
+		data:{
+			'password':p,
+			'email':e,
+			'address':a,
+			'fullname':f
+		},
+		success:function(string){
+			$('#SuccessUpdate').modal('show');
+			$('#setaccount').hide();
 
+			$('#password').attr('disabled','disabled');
+			
+		
+			$('#fullname').attr('disabled','disabled');
+			
+		
+			$('#email').attr('disabled','disabled');
+			
+		
+			$('#address').attr('disabled','disabled');
+		}
+	});
+});
 function loadprofile() {
 	$('#setaccount').hide();
 	$.ajax({	
@@ -16,7 +63,7 @@ function loadprofile() {
 			$('#fullname').val(data.user[0].FullName);
 			$('#birthday').val(data.user[0].Birthday);
 			$('#email').val(data.user[0].Email);
-			$('#address').val(data.user[0].address);
+			$('#address').val(data.user[0].Address);
 			for (var i = 0; i < data.bill.length; i++) {
 				var str = $('<tr><th><a onclick="loadbill('+data.bill[i].ID+')">HD0000'+data.bill[i].ID+'</a></th><th>'+data.bill[i].Date+'</th></tr>');
 				$('#bill-history').append(str);

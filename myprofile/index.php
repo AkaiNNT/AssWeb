@@ -34,13 +34,6 @@
     <link href="../css/home.css" rel="stylesheet">
     <link href="../css/profile.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body id="page-top">
@@ -70,27 +63,22 @@
                       <tr>
                         <td>Password</td>
                         <td><input type="password" id="password" disabled></td>
-                        <td><a>chỉnh sửa</a></td>
+                        <td><a id="apassword">chỉnh sửa</a></td>
                       </tr>
                       <tr>
                         <td>Họ và tên</td>
                         <td><input type="text" id="fullname" disabled></td>
-                        <td><a>chỉnh sửa</a></td>
-                      </tr>
-                      <tr>
-                        <td>Ngày</td>
-                        <td><input type="text" id="birthday" disabled></td>
-                        <td><a>chỉnh sửa</a></td>
+                        <td><a id="afullname">chỉnh sửa</a></td>
                       </tr>
                       <tr>
                         <td>Email</td>
                         <td><input type="text" id="email" disabled></td>
-                        <td><a>chỉnh sửa</a></td>
+                        <td><a id="aemail">chỉnh sửa</a></td>
                       </tr>
                       <tr>
                         <td>Địa chỉ</td>
-                        <td><input type="text" id="adress" disabled></td>
-                        <td><a>chỉnh sửa</a></td>
+                        <td><input type="text" id="address" disabled></td>
+                        <td><a id="aaddress">chỉnh sửa</a></td>
                       </tr>  
                     </tbody>
                   </table>
@@ -121,17 +109,15 @@
     include '../php/footer.php';
     include '../php/BillForm.php';
 ?>
+    <div class="modal fade in" id="SuccessUpdate" role="dialog">
+        <div class="modal-dialog success-modal">
+            <h2>Success!</h2>
+            <p>Cập nhật thành công</p>
+        </div>
+    </div>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
-   <!--  <script type="text/javascript">
-      $(document).ready(function(){
-        $("#form-profile-2").hide();
-        $("#setaccount").click(function(){
-          window.location.href ='../php/profile.php';
-        });
-      });
-    </script> -->
-    <!-- Bootstrap Core JavaScript -->
+   
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->

@@ -44,6 +44,12 @@ $('#search-rating').click(function(){
 	$('#products').text("");
 	j = 0;
 });
+$('#search-buy').click(function(){
+	if(typesearch ==6) typesearch = 5;
+	else typesearch = 6;
+	$('#products').text("");
+	j = 0;
+});
 function load_contents(){
     if(loading == false){
     	if(j <= data.mp3[typesearch].length){
