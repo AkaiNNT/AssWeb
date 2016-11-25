@@ -54,43 +54,43 @@
       <div class=" form-profile col-xs-12 col-sm-12">
             <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Tran Thi Hoa</h3>
+              <h3 class="panel-title" id="name-title"></h3>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="../img/avatar_login.png" class="img-circle img-responsive"> </div>
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td>Username:</td>
-                        <td><input type="text" name="username" value="hoatran" disabled></td>
-                        <td><a>Edit</a></td>
+                        <td>Username</td>
+                        <td><input type="text" id="username" disabled></td>
+                        <td></td>
                       </tr>
                       <tr>
-                        <td>Password:</td>
-                        <td><input type="password" name="birthday" value="000000" disabled></td>
-                        <td><a>Edit</a></td>
+                        <td>Password</td>
+                        <td><input type="password" id="password" disabled></td>
+                        <td><a>chỉnh sửa</a></td>
                       </tr>
                       <tr>
-                        <td>Fullname:</td>
-                        <td><input type="text" name="fullname" value="Tran Thi Hoa" disabled></td>
-                        <td><a>Edit</a></td>
+                        <td>Họ và tên</td>
+                        <td><input type="text" id="fullname" disabled></td>
+                        <td><a>chỉnh sửa</a></td>
                       </tr>
                       <tr>
-                        <td>Birthday:</td>
-                        <td><input type="text" name="birthday" value="17-04-1995" disabled></td>
-                        <td><a>Edit</a></td>
+                        <td>Ngày</td>
+                        <td><input type="text" id="birthday" disabled></td>
+                        <td><a>chỉnh sửa</a></td>
                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td><input type="text" name="email" value="hoatran.bkit@gmail.com" disabled></td>
-                        <td><a>Edit</a></td>
+                        <td><input type="text" id="email" disabled></td>
+                        <td><a>chỉnh sửa</a></td>
                       </tr>
                       <tr>
-                        <td>Adress</td>
-                        <td><input type="text" name="adress" value="Ho Chi Minh City" disableds></td>
-                        <td><a>Edit</a></td>
+                        <td>Địa chỉ</td>
+                        <td><input type="text" id="adress" disabled></td>
+                        <td><a>chỉnh sửa</a></td>
                       </tr>  
                     </tbody>
                   </table>
@@ -99,29 +99,18 @@
             </div>
           </div>
       </div>
-      <button type="button" class="btn btn-primary profile" id="setaccount">SUBMIT ACOUNT</button>
+      <button type="button" class="btn btn-primary profile" id="setaccount">Cập nhật</button>
 
     </div>
     <div class="right-profile col-xs-12 col-sm-3">
     <div class="title_muahang">Lich sử mua hàng</div>
-    <table class=" table history">
-      <thead>
+    <table class="table history">
+      <thead id ="bill-history">
         <tr>
           <th>Mã mua hàng</th>
           <th>Ngày mua hàng</th>
         </tr> 
-        <tr>
-          <th><a>66477387873</a></th>
-          <th>17-3-2015</th>
-        </tr>
-        <tr>
-          <th><a>66477387873</a></th>
-          <th>17-3-2015</th>
-        </tr>
-        <tr>
-          <th><a>66477387873</a></th>
-          <th>17-3-2015</th>
-        </tr>
+        
       </thead>
     </table>
     </div>
@@ -130,6 +119,7 @@
 </section>
 <?php 
     include '../php/footer.php';
+    include '../php/BillForm.php';
 ?>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -151,6 +141,7 @@
     <script src="../js/creative.min.js"></script>
     <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
+    <script src="../js/profile.js"></script>
 
 </body>
 

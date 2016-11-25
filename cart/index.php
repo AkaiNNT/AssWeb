@@ -74,7 +74,7 @@
 	            		<span id="Order"></span><span>  VNĐ</span>
 	            	</div>
 	            </div>
-	            <div style="margin-top:5px;text-align:right;"><button class="btn btn-primary" data-toggle="modal" data-target="#CheckoutModal" style="border-radius: 6px;">Thanh Toán</button></div>
+	            <div style="margin-top:5px;text-align:right;"><button class="btn btn-primary" id="btn-checkout" style="border-radius: 6px;">Thanh Toán</button></div>
             </div>
         </div>
         <div class="col-lg-3 col-sm-3">
@@ -117,76 +117,20 @@
         <div class="clear"></div>
     </div>
 
-    <div class="modal fade in" id="CheckoutModal" role="dialog">
-    <div class="panel panel-default credit-card-box">
-	    <div class="panel-heading display-table" >
-	      <div class="row display-tr" >
-	        <h3 class="panel-title display-td" >Payment Details</h3>
-	        <div class="display-td" >                            
-	        <img class="img-responsive pull-right" src="../img/accepted.png" alt="">
-	        </div>
-	      </div>                    
-	    </div>
-	    <div class="panel-body">
-	      <form role="form" id="payment-form">
-	        <div class="row">
-	          <div class="col-xs-12">
-	            <div class="form-group">
-	              <label>CARD NUMBER</label>
-	              <div class="input-group">
-	                <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" required autofocus>
-	                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-	              </div>
-	            </div>                            
-	          </div>
-	        </div>
-	        <div class="row">
-	          <div class="col-xs-7 col-md-7">
-	            <div class="form-group">
-	              <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-	              <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY">
-	            </div>
-	          </div>
-	          <div class="col-xs-5 col-md-5 pull-right">
-	            <div class="form-group">
-	              <label>CV CODE</label>
-	              <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" required>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="row">
-	          <div class="col-xs-12">
-	            <div class="form-group">
-	              <label>COUPON CODE</label>
-	              <input type="text" class="form-control" name="couponCode">
-	            </div>
-	          </div>                        
-	        </div>
-	        <div class="row">
-	          <div class="col-xs-8">
-	            <button class="btn btn-success btn-lg btn-block" type="submit">Start Subscription</button>
-	          </div>
-	          <div class="col-xs-4">
-	            <button type="button" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Close</button>
-	          </div>
-	        </div>
-	        <div class="row" style="display:none;">
-	          <div class="col-xs-12">
-	            <p class="payment-errors"></p>
-	          </div>
-	        </div>
-	      </form>
-	    </div>
-	  </div>    
-	</div>
 </div>
 </section>
 
 <?php 
       include '../php/footer.php';
       include '../php/success.php';
+      include '../php/BillForm.php';
 ?>
-
+    <div class="modal fade in" id="SuccessPayment" role="dialog">
+        <div class="modal-dialog success-modal">
+            <h2>Success!</h2>
+            <p>Cám Ơn bạn đã Thanh toán</p>
+        </div>
+    </div>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <?php

@@ -10,17 +10,12 @@
 	$selected = mysqli_select_db($dbhandle, "shopbanhang") or die("Could not select shopbanhang");
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
-	$uid = $_SESSION['userId'];
+	$total = $_POST['total'];
 
-	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM user WHERE ID = $uid");
-	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill");
-	$data = array();
-	while ($row = mysqli_fetch_array($GLOBALS['result1'])){ 
-	    $data['user'][] =  $row;
-	}
-	while ($row = mysqli_fetch_array($GLOBALS['result2'])){ 
-	    $data['bill'][] =  $row;
-	}
-	echo json_encode($data);
+	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO bill VALUES(NULL,$total,NULL)");
+
+	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill ORDER BY ID DESC LIMIT 1");
+	$row = mysqli_fetch_array($GLOBALS['result2']);
+	echo $row{'ID'};
 	mysqli_close($dbhandle);
 ?>

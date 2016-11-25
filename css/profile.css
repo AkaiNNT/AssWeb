@@ -39,3 +39,6 @@ input:disabled{
 a{
 	cursor: pointer;
 }
+.table-user-information a{
+	font-size: 80%;
+}
