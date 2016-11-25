@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
 ?>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
     <link href="../css/dropdown.css" rel="stylesheet">
 
     <link href="../css/product.css" rel="stylesheet">
-    <link href="../css/profile.css" rel="stylesheet">
+    
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -32,6 +32,7 @@
     <!-- Theme CSS -->
     <link href="../css/creative.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,7 +54,7 @@
       <div class=" form-profile col-xs-12 col-sm-12">
             <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Sheena Shrestha</h3>
+              <h3 class="panel-title">Tran Thi Hoa</h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -63,23 +64,33 @@
                     <tbody>
                       <tr>
                         <td>Username:</td>
-                        <td><input type="text" name="username" value="Tran Thi Hoa"></td>
+                        <td><input type="text" name="username" value="hoatran" disabled></td>
+                        <td><a>Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="birthday" value="000000" disabled></td>
+                        <td><a>Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Fullname:</td>
+                        <td><input type="text" name="fullname" value="Tran Thi Hoa" disabled></td>
+                        <td><a>Edit</a></td>
                       </tr>
                       <tr>
                         <td>Birthday:</td>
-                        <td><input type="text" name="birthday" value="17-04-1995"></td>
+                        <td><input type="text" name="birthday" value="17-04-1995" disabled></td>
+                        <td><a>Edit</a></td>
                       </tr>
                       <tr>
                         <td>Email</td>
-                        <td><input type="text" name="email" value="hoatran.bkit@gmail.com"></td>
-                      </tr>
-                      <tr>
-                        <td>Phone</td>
-                        <td><input type="text" name="phone" value="0909877666"></td>
+                        <td><input type="text" name="email" value="hoatran.bkit@gmail.com" disabled></td>
+                        <td><a>Edit</a></td>
                       </tr>
                       <tr>
                         <td>Adress</td>
-                        <td><input type="text" name="adress" value="Ho Chi Minh City"></td>
+                        <td><input type="text" name="adress" value="Ho Chi Minh City" disableds></td>
+                        <td><a>Edit</a></td>
                       </tr>  
                     </tbody>
                   </table>
@@ -88,11 +99,31 @@
             </div>
           </div>
       </div>
-      <button type="button" class="btn btn-primary profile" id="setaccount">Submit Modify</button>
+      <button type="button" class="btn btn-primary profile" id="setaccount">SUBMIT ACOUNT</button>
 
     </div>
     <div class="right-profile col-xs-12 col-sm-3">
     <div class="title_muahang">Lich sử mua hàng</div>
+    <table class=" table history">
+      <thead>
+        <tr>
+          <th>Mã mua hàng</th>
+          <th>Ngày mua hàng</th>
+        </tr> 
+        <tr>
+          <th><a>66477387873</a></th>
+          <th>17-3-2015</th>
+        </tr>
+        <tr>
+          <th><a>66477387873</a></th>
+          <th>17-3-2015</th>
+        </tr>
+        <tr>
+          <th><a>66477387873</a></th>
+          <th>17-3-2015</th>
+        </tr>
+      </thead>
+    </table>
     </div>
     </div>
 
