@@ -81,7 +81,7 @@
 }
 .search-method{
     height: 255px;
-    cursor: default;
+    cursor: pointer;
 }
 .search-method:hover{
     height: 255px;

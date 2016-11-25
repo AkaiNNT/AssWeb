@@ -13,7 +13,7 @@
 .content .right-profile{
 	height: 500px;
 	margin-top: -49px;
-	background-color: #F05F40;
+	/*background-color: #F05F40;*/
 	
 }
 .btn.btn-primary.profile{
@@ -31,4 +31,11 @@
 	 font-size: 150%;
     font-family: sans-serif;
      margin-top: 20px;
+     margin-bottom: 12px;
+}
+input:disabled{
+	background: white !important;
+}
+a{
+	cursor: pointer;
 }
