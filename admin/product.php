@@ -12,40 +12,16 @@
   <link href="../css/admin/layout.css" rel="stylesheet">
 </head>
 <body>
-  <!-- <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">                
-      <li class="active-nav">
-        <button>User</button>                   
-      </li>
-      <li>
-        <button>Product</button>                   
-      </li>
-      <li>
-        <button>Rating</button>                   
-      </li>
-      <li>
-        <button>Cart</button>                   
-      </li>
-    </ul>
-  </div>
-  <div class="body-admin-member">
-    <h1>Member</h1>
-      <div class="container table-admin-member">    
-        <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th class="th">Name</th>          
-              <th class="th">Email</th>
-              <th class="th">Full Name</th>
-              <th class="th">Birthday</th>
-              <th class="th">Address</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </div> -->
+<?php
+  session_start();
+  if ($_SESSION['login'] == false){
+    header("location:index.php");
+  }
+  // echo $_SESSION['username'];
+?>
+<form name="logout" id="logout" method="POST" action="logout.php">
+<input type="submit" name="submit" id="submit" value="Logout"/>
+</form>
   <div class="row">
     <div class="col-md-2">
       <div class="left-menu" id="left-menu">

@@ -7,6 +7,16 @@
   <link href="../css/admin/layout.css" rel="stylesheet">
 </head>
 <body>
+<?php
+  session_start();
+  if ($_SESSION['login'] == false){
+    header("location:index.php");
+  }
+  // echo $_SESSION['username'];
+?>
+<form name="logout" id="logout" method="POST" action="logout.php">
+<input type="submit" name="submit" id="submit" value="Logout"/>
+</form>
   <div class="row">
   <div class="col-md-2">
     <div class="left-menu" id="left-menu">

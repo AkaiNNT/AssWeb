@@ -35,7 +35,8 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `admin` (`ID`, `Email`, `Password`) VALUES
+(1, 'admin@admin.com', 'admin@admin.com');
 --
 -- Table structure for table `cart`
 --
