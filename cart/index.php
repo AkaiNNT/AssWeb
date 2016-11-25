@@ -74,7 +74,7 @@
 	            		<span id="Order"></span><span>  VNĐ</span>
 	            	</div>
 	            </div>
-	            <div style="margin-top:5px;text-align:right;"><button class="btn btn-primary" data-toggle="modal" data-target="#CheckoutModal" style="border-radius: 6px;">Check Out</button></div>
+	            <div style="margin-top:5px;text-align:right;"><button class="btn btn-primary" data-toggle="modal" data-target="#CheckoutModal" style="border-radius: 6px;">Thanh Toán</button></div>
             </div>
         </div>
         <div class="col-lg-3 col-sm-3">
