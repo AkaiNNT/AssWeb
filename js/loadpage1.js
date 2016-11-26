@@ -101,7 +101,11 @@ function addcart(pid,num){
 			'num':num
 		},
 		success: function(str){
-			if(parseInt(str)==1) $("#success").modal('show');
+			if(parseInt(str)==1) {
+                $('#Tinnhan').css('visibility','visible');
+                $('#Tinnhan').text((parseInt($('#Tinnhan').text())+1).toString());
+                $("#success").modal('show');
+            }
 			else if(parseInt(str)==0) $("#error").modal('show');
 			else $("#LoginModal").modal('show');
 		}
