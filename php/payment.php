@@ -10,17 +10,14 @@
 	$selected = mysqli_select_db($dbhandle, "shopbanhang") or die("Could not select shopbanhang");
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
+	$bid = $_POST['bid'];
 	$uid = $_SESSION['userId'];
+	$pid = $_POST['pid'];
+	$num = $_POST['num'];
+	$price = $_POST['price'];
 
-	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM user WHERE ID = $uid");
-	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill");
-	$data = array();
-	while ($row = mysqli_fetch_array($GLOBALS['result1'])){ 
-	    $data['user'][] =  $row;
-	}
-	while ($row = mysqli_fetch_array($GLOBALS['result2'])){ 
-	    $data['bill'][] =  $row;
-	}
-	echo json_encode($data);
+	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO payment VALUES(NULL,$bid,$uid,$pid,$num,$price)");
+	mysqli_query($GLOBALS['dbhandle'],"UPDATE product SET NumBuy = NumBuy + $num WHERE ID = $pid");
+
 	mysqli_close($dbhandle);
 ?>

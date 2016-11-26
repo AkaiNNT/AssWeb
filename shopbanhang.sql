@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2016 at 09:39 AM
+-- Generation Time: Nov 26, 2016 at 05:47 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.37
 
@@ -34,9 +34,35 @@ CREATE TABLE `admin` (
   `Password` varchar(15) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
--- --------------------------------------------------------
+--
+-- Dumping data for table `admin`
+--
+
 INSERT INTO `admin` (`ID`, `Email`, `Password`) VALUES
 (1, 'admin@admin.com', 'admin@admin.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bill`
+--
+
+CREATE TABLE `bill` (
+  `ID` int(6) NOT NULL,
+  `PriceTotal` int(10) NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `bill`
+--
+
+INSERT INTO `bill` (`ID`, `PriceTotal`, `Date`) VALUES
+(5, 6908000, '2016-11-25 13:54:07'),
+(6, 2350000, '2016-11-25 14:39:37');
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `cart`
 --
@@ -57,11 +83,10 @@ INSERT INTO `cart` (`ID`, `ProductID`, `UserID`, `Number`) VALUES
 (11, 5, 7, 1),
 (12, 35, 7, 1),
 (13, 7, 7, 2),
-(14, 11, 1, 1),
 (15, 14, 8, 1),
 (16, 33, 8, 1),
 (17, 5, 8, 2),
-(18, 42, 1, 1);
+(41, 31, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -103,6 +128,31 @@ CREATE TABLE `contact` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `ID` int(6) NOT NULL,
+  `BillID` int(6) NOT NULL,
+  `UserID` int(6) NOT NULL,
+  `ProductID` int(6) NOT NULL,
+  `Num` int(2) NOT NULL,
+  `Price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`ID`, `BillID`, `UserID`, `ProductID`, `Num`, `Price`) VALUES
+(9, 5, 1, 1, 2, 179000),
+(10, 5, 1, 32, 1, 1750000),
+(11, 5, 1, 36, 3, 1600000),
+(12, 6, 1, 5, 3, 750000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -114,7 +164,7 @@ CREATE TABLE `product` (
   `Class` varchar(20) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `PostDay` date NOT NULL,
   `Description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `star` int(1) NOT NULL DEFAULT '0',
+  `star` float NOT NULL DEFAULT '0',
   `NumVote` int(4) NOT NULL DEFAULT '0',
   `NumBuy` int(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -124,11 +174,11 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Description`, `star`, `NumVote`, `NumBuy`) VALUES
-(1, 'Loa Dàn 2.0 Soundmax A130 Red', 179000, 'Loa', 'Soundmax', '2016-11-13', 'Thiết kế nhỏ gọn âm thanh sống động.', 0, 0, 0),
-(2, 'Loa Bluetooth Remax RM-M1', 179000, 'Loa', 'Bluetooth', '2016-11-13', 'Sản Phẩm Loa Bluetooth tích hợp FM Radio và Micro phone giúp bạn vừa có thể nghe nhạc, vừa có thể nhận và trả lời cuộc Đàm thoại thông qua kết nối Bluetooth. Hoặc làm nguồn phát trực tiếp và đồng thời chơi những Bản nhạc từ những thiết bị như USB,Thẻ nhớ…  thông qua những khe cắm tực tiếp trên loa.', 0, 0, 0),
+(1, 'Loa Dàn 2.0 Soundmax A130 Red', 179000, 'Loa', 'Soundmax', '2016-11-13', 'Thiết kế nhỏ gọn âm thanh sống động.', 0, 0, 2),
+(2, 'Loa Bluetooth Remax RM-M1', 179000, 'Loa', 'Bluetooth', '2016-11-13', 'Sản Phẩm Loa Bluetooth tích hợp FM Radio và Micro phone giúp bạn vừa có thể nghe nhạc, vừa có thể nhận và trả lời cuộc Đàm thoại thông qua kết nối Bluetooth. Hoặc làm nguồn phát trực tiếp và đồng thời chơi những Bản nhạc từ những thiết bị như USB,Thẻ nhớ…  thông qua những khe cắm tực tiếp trên loa.', 2.5, 2, 0),
 (3, 'Loa dàn 2.0 Senicc SN-462', 260000, 'Loa', 'Senicc', '2016-11-14', 'Tương thích với Điện thoại,máy tính,laptop,máy tính bảng… Nghe nhạc,chơi game', 0, 0, 0),
 (4, 'Loa dàn 2.0 Senicc SN-467', 260000, 'Loa', 'Senicc', '2016-11-14', 'Kích thước nhỏ gọn, có tính di động cao, phù hợp với nhiều không gian hoàn cảnh sử dụng như đi du lịch, nghe trong phòng,nơi làm việc...\r\n Thích hợp cho nhiều thiết công nghệ khác nhau: điện thoại, máy tính bảng, máy tính xách tay, máy tính để bàn, máy mp3…\r\n Loa SENICC SN-467 đáp ứng để thể hiện tất cả các âm ở dải âm tần 150-15khz\r\n Cho âm thanh khá chung thực\r\n Loa SENICC SN 467 có thể đáp ứng tần số 150-15kHz độ  và Tỷ lệ tín hiệu trên nhiễu của SENICC SN 467 là >60dB,\r\n Loa mini SENICC sử dụng nguồn 5V usb,Jack tín hiệu 3.5 mm  cho phép kết nối với hầu hết các thiết bị âm thanh Digital và phát âm thanh STREORIO', 0, 0, 0),
-(5, 'Loa bluetooth Rocky CR-X6', 750000, 'Loa', 'Bluetooth', '2016-11-12', 'Thiết kế nhỏ gọn dễ thương.', 0, 0, 0),
+(5, 'Loa bluetooth Rocky CR-X6', 750000, 'Loa', 'Bluetooth', '2016-11-12', 'Thiết kế nhỏ gọn dễ thương.', 0, 0, 3),
 (6, 'Loa dàn 2.1 Soundmax A960', 899000, 'Loa', 'Soundmax', '2016-11-13', 'Thuộc dòng loa 2.1 không quá cồng kềnh nhưng công suất đủ lớn để đảm báo phát âm chuẩn, to, rõ nét,…\r\nNgoài tính năng Bluetooth thì còn có khe cắm thẻ nhớ và USB.\r\nRemote kèm theo hỗ trợ các chức năng chơi nhạc cơ bản.', 0, 0, 0),
 (7, 'Loa Remax Bluetooth cao cấp RB-M7', 999000, 'Loa', 'Bluetooth', '2016-11-14', 'Tương thích với tất cả các thiết bị thu phát bluetooth Kết nối không dây 4.0', 0, 0, 0),
 (8, 'Loa Bluetooth Creative Sound Blaster SPBL-Free', 2700000, 'Loa', 'Bluetooth', '2016-11-16', 'Thiết kế Creative tương đương một bình thể thao, giúp cho bạn có thể gắn lên một chiếc xe đạp thể thao dễ dàng.', 0, 0, 0),
@@ -146,7 +196,7 @@ INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Descr
 (20, 'Loa vi tính Soundmax A920', 740000, 'Loa', 'Soundmax', '2016-11-19', 'Tổng công suất: 30W\r\nCống suất loa siêu trầm: 15W\r\nBộ sản phẩm: 1 sub, 2 vệ tinh\r\nJack kết nối: 3.5mm\r\nKhe cắm USB/SD: Có\r\nBảo hành 3 tháng 1 đổi 1.', 0, 0, 0),
 (21, 'Loa vi tính Fenda F203G', 490000, 'Loa', 'Fenda', '2016-11-14', 'Thiết kế nhỏ gọn và tinh tế, giúp cho việc di chuyển hoặc mang đi xa trở nên dễ dàng.\r\nNhờ công suất 11W, loa cho âm thanh chân thật và sống động.\r\nĐiều chỉnh âm thanh theo ý muốn với nút tăng giảm Bass và đèn LED xanh báo hiệu.\r\nChất liệu gỗ giúp cho âm thanh ấm và không bị méo.\r\nKết nối dễ dàng và tương thích với laptop, MP3, điện thoại,...\r\nBảo hành 1 năm 1 đổi 1', 0, 0, 0),
 (22, 'Loa vi tính Fenda F380X', 1350000, 'Loa', 'Fenda', '2016-11-13', 'Thiết kế mạnh mẽ, đẹp mắt và tỉ mỉ với vòng tròn phát sáng ở trung tâm khi sử dụng.\r\nCông suất 54W mang đến âm thanh chất lượng cao, sống động và rõ nét.\r\nKết nối không dây với các thiết bị di động qua Bluetooth 4.0/ NFC.\r\nTrang bị thêm remote giúp cho việc điều chỉnh bài nhạc, tăng giảm âm lượng... thuận tiện hơn.\r\nNguồn: 220 - 240V.\r\nBảo hành 1 năm 1 đổi 1', 0, 0, 0),
-(23, 'Loa Bluetooth 6000mAH JBL Pulse 2', 4900000, 'Loa', 'Bluetooth', '2016-11-17', 'Âm thanh mạnh mẽ với công nghệ JBL Bass Radiator.\r\nThiết kế với khả năng chịu nước và bụi bẩn.\r\nDung lượng pin lên đến 6000mAh, cho thời gian phát nhạc lên đến 10 giờ.\r\nĐặc biệt là khả năng nhận dạng màu sắc của vật thể gần nó để thay đổi 7 màu sắc tương ứng với bài nhạc.\r\nCài đặt thêm app JBL connect để thay đổi cách mà ánh sáng trình diễn trên mặt loa.\r\nCó khả năng kết nối với nhiều thiết bị.\r\nBảo hành 3 tháng 1 đổi 1', 0, 0, 0),
+(23, 'Loa Bluetooth 6000mAH JBL Pulse 2', 4900000, 'Loa', 'Bluetooth', '2016-11-17', 'Âm thanh mạnh mẽ với công nghệ JBL Bass Radiator.\r\nThiết kế với khả năng chịu nước và bụi bẩn.\r\nDung lượng pin lên đến 6000mAh, cho thời gian phát nhạc lên đến 10 giờ.\r\nĐặc biệt là khả năng nhận dạng màu sắc của vật thể gần nó để thay đổi 7 màu sắc tương ứng với bài nhạc.\r\nCài đặt thêm app JBL connect để thay đổi cách mà ánh sáng trình diễn trên mặt loa.\r\nCó khả năng kết nối với nhiều thiết bị.\r\nBảo hành 3 tháng 1 đổi 1', 3, 1, 0),
 (24, 'Loa vi tính Fenda U213A - 2.0', 220000, 'Loa', 'Fenda', '2016-11-14', 'Thiết kế đơn giản với màu đen trơn nhưng rất tinh tế và đẹp mắt.\r\nKích thước nhỏ gọn thuận tiện cho việc di chuyển.\r\nVới góc nghiêng 11 độ giúp Loa phát âm thanh rộng hơn.\r\nKết nối dễ dàng và nhanh chóng với PC, laptop,...thông qua Jack 3.5mm.\r\nBảo hành 1 năm 1 đổi 1.', 0, 0, 0),
 (25, 'Loa Bluetooth Selfie iCutes MB-M515 Dơi Đen', 250000, 'Loa', 'Bluetooth', '2016-11-18', 'Thiết kế nhỏ gọn, đẹp mắt.\r\nCó chức năng như Remote chụp ảnh thông qua Bluetooth.\r\nThời gian hoạt động: 2 - 4 giờ.\r\nThời gian sạc: 2 giờ.\r\nBảo hành 1 năm 1 đổi 1.', 0, 0, 0),
 (26, 'Loa vi tính Fenda A111', 750000, 'Loa', 'Fenda', '2016-11-21', 'Thiết kế đẹp mắt và đồng bộ.\r\nDễ dàng điểu chỉnh âm thanh theo ý muốn với nút tăng giảm âm Bass, Treble.\r\nCông suất 35W và tỉ số nén nhiễu 65db, mang đến chất lượng âm thanh ổn định và ít nhiễu khi âm thanh ở mức cực đại.\r\nDễ dàng tùy chỉnh với 3 nút: Play/Pause, Next, Previous.\r\nTương thích và kết nối dễ dàng với hầu hết thiết bị điện tử: laptop, Mp3, đầu CD,...\r\nBảo hành 1 năm 1 đổi 1.', 0, 0, 0),
@@ -154,11 +204,11 @@ INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Descr
 (29, 'Loa Bluetooth Genius SP-920BT', 900000, 'Loa', 'Bluetooth', '2016-11-15', 'Thiết kế nhỏ gọn, tiện dụng và đẹp mắt.\r\nThoải mái đàm thoại với nút nghe/nhận cuộc gọi, mic ngay trên thân loa.\r\nCông nghệ bluetooth 4.0 giúp kết nối nhanh chóng, dễ dàng với các thiết bị.\r\nKhoảng cách kết nối lên đến 30 mét.\r\nSử dụng pin lithium, dung lượng 1000mAh.\r\nBảo hành 1 năm 1 đổi 1', 0, 0, 0),
 (30, 'Loa vi tính Fenda A521', 1050000, 'Loa', 'Fenda', '2016-11-17', 'Thiết kế bề mặt loa không bám bẩn và vệ sinh khá dễ dàng.\r\nCông suất 52W mang đến âm thanh chất lượng cao, sống động và rõ nét.\r\nTích hợp thêm hai cổng kết nối dành riêng cho USB và thẻ nhớ MicroSD.\r\nThao tác dễ dàng với 3 nút điều khiển Play/Pause, Next và Previous.\r\nTương thích và dễ dàng kết nối với laptop, đầu CD/VCD,...\r\nBảo hành 1 năm 1 đổi 1. ', 0, 0, 0),
 (31, 'MP3 Sony Walkman NW-WS410', 1749000, 'Mp3', 'Sony', '2016-11-15', 'Dung lượng 4G, sạc pin nhanh.', 0, 0, 0),
-(32, 'Máy MP3 Walkman NW-E394', 1750000, 'Mp3', 'Sony', '2016-11-21', '-Mặt trước vỏ ngoài làm từ nhôm nguyên chất.\r\n-Màn hình 1.77 inch, QQVGA (160 x 128), 65,536 màu\r\n-Chức năng chính: Nghe nhạc, xem hình, lưu trữ dữ liệu, FM.\r\n-Công nghệ âm thanh Bass Boost, Clear Audio+\r\n-5 band equalizer (Heavy / Pop / Jazz / Unique / Custom)\r\n-Cài đặt giờ và báo thức.', 0, 0, 0),
+(32, 'Máy MP3 Walkman NW-E394', 1750000, 'Mp3', 'Sony', '2016-11-21', '-Mặt trước vỏ ngoài làm từ nhôm nguyên chất.\r\n-Màn hình 1.77 inch, QQVGA (160 x 128), 65,536 màu\r\n-Chức năng chính: Nghe nhạc, xem hình, lưu trữ dữ liệu, FM.\r\n-Công nghệ âm thanh Bass Boost, Clear Audio+\r\n-5 band equalizer (Heavy / Pop / Jazz / Unique / Custom)\r\n-Cài đặt giờ và báo thức.', 0, 0, 1),
 (33, 'Sony NWZ-WH505', 3800000, 'Mp3', 'Sony', '2016-11-17', 'Hãng sản xuất: SONY\r\nDung lượng bộ nhớ trong: 16GB', 0, 0, 0),
 (34, 'Apple iPod shuffle 2GB', 100000, 'Mp3', 'Apple', '2016-11-18', 'Tiếng Việt', 0, 0, 0),
 (35, 'Apple iPod Nano 2011 8GB', 3550000, 'Mp3', 'Apple', '2016-11-15', 'Nhỏ gọn kiểu dáng sang trọng.\r\nDung lượng 8G.', 0, 0, 0),
-(36, 'Apple iPod Shuffle 2012 2GB', 1600000, 'Mp3', 'Apple', '2016-11-22', 'Tét tiếng việt', 0, 0, 0),
+(36, 'Apple iPod Shuffle 2012 2GB', 1600000, 'Mp3', 'Apple', '2016-11-22', 'Tét tiếng việt', 0, 0, 3),
 (37, 'Mp3 ITECH V44', 1500000, 'Mp3', 'Apple', '2016-11-20', 'Không có gì ấn tượng lắm.\r\nMiễn nhận xét.', 0, 0, 0),
 (38, 'Sony Walkman NWZ-W273', 1750000, 'Mp3', 'Sony', '2016-11-17', 'Sang trọng thích hợp với người năng động.\r\nGiá cả phải chăng. Bền và có bảo hành.', 0, 0, 0),
 (39, 'Transcend MP350 8GB', 990000, 'Mp3', 'Other', '2016-11-24', 'Rất đáng quan tâm, giá rẻ, sử dụng bảo hành 1 năm không bảo đảm.', 0, 0, 0),
@@ -189,6 +239,15 @@ CREATE TABLE `rating` (
   `Star` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`ID`, `UserID`, `ProductID`, `Star`) VALUES
+(7, 1, 2, 4),
+(8, 8, 2, 1),
+(9, 1, 23, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -201,7 +260,6 @@ CREATE TABLE `user` (
   `Password` varchar(15) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `FullName` varchar(30) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Birthday` date DEFAULT NULL,
   `Address` varchar(50) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -209,11 +267,11 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Birthday`, `Address`) VALUES
-(1, 'QuangHung', '123456', 'h@gmai.com', 'Hong Quang Hung', NULL, NULL),
-(7, 'ThaiHoa', '123456', 'game@ya.com', 'Nguyễn Thái Hòa', NULL, NULL),
-(8, 'TranHoa', '123456', 'hoa@gmail.com', 'Trần Thị Hoa', NULL, NULL),
-(9, 'user', 'user', 'user@gmail.com', 'No Name', NULL, NULL);
+INSERT INTO `user` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Address`) VALUES
+(1, 'QuangHung', '123456', 'hqh@gmail.com', 'Hong Quang Hung', ''),
+(7, 'ThaiHoa', '123456', 'game@ya.com', 'Nguyễn Thái Hòa', NULL),
+(8, 'TranHoa', '123456', 'hoa@gmail.com', 'Trần Thị Hoa', NULL),
+(9, 'user', 'user', 'user@gmail.com', 'No Name', NULL);
 
 --
 -- Indexes for dumped tables
@@ -223,6 +281,12 @@ INSERT INTO `user` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Birthday
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `bill`
+--
+ALTER TABLE `bill`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -241,6 +305,12 @@ ALTER TABLE `comment`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -271,12 +341,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `comment`
 --
@@ -288,6 +363,11 @@ ALTER TABLE `comment`
 ALTER TABLE `contact`
   MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -296,7 +376,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `user`
 --

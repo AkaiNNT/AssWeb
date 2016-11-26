@@ -68,7 +68,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center search-method">
+                <div class="col-lg-3 col-md-6 text-center search-method" id="search-buy">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
                         <h3>Top được mua</h3>

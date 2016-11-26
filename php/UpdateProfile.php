@@ -11,16 +11,14 @@
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
 	$uid = $_SESSION['userId'];
+	$pass = $_POST['password'];
+	$email = $_POST['email'];
+	$fullname = $_POST['fullname'];
+	$address = $_POST['address'];
 
-	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM user WHERE ID = $uid");
-	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill");
-	$data = array();
-	while ($row = mysqli_fetch_array($GLOBALS['result1'])){ 
-	    $data['user'][] =  $row;
-	}
-	while ($row = mysqli_fetch_array($GLOBALS['result2'])){ 
-	    $data['bill'][] =  $row;
-	}
-	echo json_encode($data);
+	mysqli_query($GLOBALS['dbhandle'],"UPDATE user SET Password = '$pass', Email = '$email', FullName = '$fullname', Address = '$address' WHERE ID =  $uid");
+
+	$_SESSION['pass'] = $pass;
+
 	mysqli_close($dbhandle);
 ?>

@@ -10,17 +10,15 @@
 	$selected = mysqli_select_db($dbhandle, "shopbanhang") or die("Could not select shopbanhang");
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
-	$uid = $_SESSION['userId'];
+	$bid = $_POST['bid'];
 
-	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM user WHERE ID = $uid");
-	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill");
+	$result = mysqli_query($GLOBALS['dbhandle'],"SELECT payment.Price,payment.Num,product.Name,bill.PriceTotal FROM payment,product,bill WHERE payment.BillID = $bid  AND product.ID = payment.ProductID AND bill.ID = payment.BillID");
+	
 	$data = array();
-	while ($row = mysqli_fetch_array($GLOBALS['result1'])){ 
-	    $data['user'][] =  $row;
+	while ($row = mysqli_fetch_array($GLOBALS['result'])){ 
+	    $data[] =  $row;
 	}
-	while ($row = mysqli_fetch_array($GLOBALS['result2'])){ 
-	    $data['bill'][] =  $row;
-	}
+	
 	echo json_encode($data);
 	mysqli_close($dbhandle);
 ?>

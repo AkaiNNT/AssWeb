@@ -21,9 +21,6 @@
 	border-radius: 5px!important;
 	margin-left: 15px;
 }
-.table.table-user-information input {
-	border: none;
-}
 .title_muahang{
 	 text-transform: uppercase;
 	 text-align:center;
@@ -35,7 +32,11 @@
 }
 input:disabled{
 	background: white !important;
+	border: none;
 }
 a{
 	cursor: pointer;
+}
+.table-user-information a{
+	font-size: 80%;
 }
