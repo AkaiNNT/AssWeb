@@ -21,7 +21,6 @@ if(isset($myemail, $mypassword)) {
   if($num > 0){
     $_SESSION['login'] = true;
     header("location:user.php");
-    // $admin_login=true;
   }else{
     header("location:index.php");
   }

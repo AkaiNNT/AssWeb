@@ -187,3 +187,6 @@ li{
   height: 90px;
   padding: 36px 16px;
 }
+#logout {
+  float: right;
+}
