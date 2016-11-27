@@ -69,10 +69,6 @@
                   <input type="text" class="form-control" id="car_id" placeholder="ID">
                 </div> -->
                 <div class="form-group">
-                  <label for="">ID</label>
-                  <input type="text" class="form-control" id="product_id" placeholder="ID">
-                </div>
-                <div class="form-group">
                   <label for="">Name</label>
                   <input type="text" class="form-control" id="product_name" placeholder="Name">
                 </div>

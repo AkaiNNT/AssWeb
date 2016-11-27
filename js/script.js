@@ -14,29 +14,36 @@ function addUser() {
     var user_password = $('#user_password').val();
     var user_address = $('#user_address').val();
     var user_fullname = $('#user_fullname').val();
+    if (user_name=='') {
+        alert("Name can't blank")
+    }
+    else if (user_password=='') {
+        alert("Password can't blank")
+    }
+    else {
+        $.post(
+            'ajax/addUser.php',
+            {
+                user_name: user_name,
+                user_email: user_email,
+                user_password: user_password,
+                user_address: user_address,
+                user_fullname: user_fullname
+            },
+            function(data, status) {
+                $('#modal-add-user').modal('hide');
 
-    $.post(
-        'ajax/addUser.php',
-        {
-            user_name: user_name,
-            user_email: user_email,
-            user_password: user_password,
-            user_address: user_address,
-            user_fullname: user_fullname
-        },
-        function(data, status) {
-            $('#modal-add-user').modal('hide');
+                showUser();
 
-            showUser();
+                $('#user_name').val('');
+                $('#user_email').val('');
+                $('#user_password').val('');
+                $('#user_address').val('');
+                $('#user_fullname').val('');
 
-            $('#user_name').val('');
-            $('#user_email').val('');
-            $('#user_password').val('');
-            $('#user_address').val('');
-            $('#user_fullname').val('');
-
-        }
-    )
+            }
+        )
+    }
 }
 
 function deleteUser(user_id) {

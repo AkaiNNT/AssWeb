@@ -33,16 +33,16 @@ function showRating() {
 //     )
 // }
 
-// function deleteUser(user_id) {
+// function deleteRating(rating_id) {
 //     var x = confirm('Are you sure?');
 //     if (x == true) {
 //         $.post(
-//             'ajax/deleteUser.php',
+//             'ajax/deleteRating.php',
 //             {
-//                 user_id: user_id
+//                 rating_id: rating_id
 //             },
 //             function(data, status) {
-//                 showUser();
+//                 showRating();
 //             }
 //         );
 //     }

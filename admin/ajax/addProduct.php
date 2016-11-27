@@ -1,5 +1,5 @@
 <?php 
-	if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['product_type']) && isset($_POST['product_price']) && isset($_POST['product_class']) && isset($_POST['product_description']) ) {
+	if ( isset($_POST['product_name']) && isset($_POST['product_type']) && isset($_POST['product_price']) && isset($_POST['product_class']) && isset($_POST['product_description']) ) {
 		include('config.php');
 		$product_name = $_POST['product_name'];
 		$product_price = $_POST['product_price'];

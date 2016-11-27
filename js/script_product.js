@@ -9,36 +9,44 @@ function showProduct() {
 }
 
 function addProduct() {
-    var product_id = $('#product_id').val();
     var product_name = $('#product_name').val();
     var product_price = $('#product_price').val();
     var product_type = $('#product_type').val();
     var product_class = $('#product_class').val();
     var product_description = $('#product_description').val();
+    if (product_name=='') {
+        alert("Product's name can't blank")
+    }
+    else if (product_price=='') {
+        alert("Price can't blank")
+    }
+    else if (product_type=='') {
+        alert("Type can't blank")
+    }
+    else {
+        $.post(
+            'ajax/addProduct.php',
+            {
+                product_name: product_name,
+                product_price: product_price,
+                product_type: product_type,
+                product_class: product_class,
+                product_description: product_description
+            },
+            function(data, status) {
+                $('#modal-add-product').modal('hide');
 
-    $.post(
-        'ajax/addProduct.php',
-        {
-            product_id: product_id,
-            product_name: product_name,
-            product_price: product_price,
-            product_type: product_type,
-            product_class: product_class,
-            product_description: product_description
-        },
-        function(data, status) {
-            $('#modal-add-product').modal('hide');
+                showProduct();
 
-            showProduct();
-
-            $('#product_id').val('');
-            $('#product_name').val('');
-            $('#product_price').val('');
-            $('#product_class').val('');
-            $('#product_type').val('');
-            $('#product_description').val('');
-        }
-    )
+                $('#product_id').val('');
+                $('#product_name').val('');
+                $('#product_price').val('');
+                $('#product_class').val('');
+                $('#product_type').val('');
+                $('#product_description').val('');
+            }
+        )
+    }
 }
 
 function deleteProduct(product_id) {
@@ -82,8 +90,17 @@ function saveEditProduct() {
     var edit_product_price = $("#edit_product_price").val();
     var edit_product_class = $("#edit_product_class").val();
     var edit_product_description = $("#edit_product_description").val();
-  
-    $.post(
+    if (edit_product_name=='') {
+        alert("Product's name can't blank")
+    }
+    else if (edit_product_price=='') {
+        alert("Price can't blank")
+    }
+    else if (edit_product_type=='') {
+        alert("Type can't blank")
+    }
+    else {
+        $.post(
         'ajax/saveEditProduct.php',
         {
             productID: productID,
@@ -97,6 +114,7 @@ function saveEditProduct() {
             $("#modal-edit-product").modal("hide");
             showProduct();
         });
+    }
 }
 
 

@@ -26,21 +26,28 @@
     var edit_user_address = $("#edit_user_address").val();
     var edit_user_fullname = $("#edit_user_fullname").val();
     var edit_user_password = $("#edit_user_password").val();
-  
-    $.post(
-        'ajax/saveEditUser.php',
-        {
-            userID: userID,
-            edit_user_name: edit_user_name,
-            edit_user_email: edit_user_email,
-            edit_user_fullname: edit_user_fullname,
-            edit_user_password: edit_user_password,
-            edit_user_address: edit_user_address
-        },
-        function (data, status) {
-            $("#modal-edit-car").modal("hide");
-            showUser();
-        });
+    if (edit_user_name=='') {
+        alert("Name can't blank")
+    }
+    else if (edit_user_password=='') {
+        alert("Password can't blank")
+    }
+    else {
+      $.post(
+          'ajax/saveEditUser.php',
+          {
+              userID: userID,
+              edit_user_name: edit_user_name,
+              edit_user_email: edit_user_email,
+              edit_user_fullname: edit_user_fullname,
+              edit_user_password: edit_user_password,
+              edit_user_address: edit_user_address
+          },
+          function (data, status) {
+              $("#modal-edit-car").modal("hide");
+              showUser();
+          });
+    }
 }
 </script>
 <form name="logout" id="logout" method="POST" action="logout.php">

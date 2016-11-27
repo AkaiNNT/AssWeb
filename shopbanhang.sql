@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2016 at 04:31 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.5.37
+-- Generation Time: Nov 27, 2016 at 07:13 PM
+-- Server version: 5.7.16-0ubuntu0.16.04.1
+-- PHP Version: 5.5.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `shopbanhang`
 --
-CREATE DATABASE IF NOT EXISTS `shopbanhang` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci;
-USE `shopbanhang`;
 
 -- --------------------------------------------------------
 
@@ -33,10 +31,6 @@ CREATE TABLE `admin` (
   `Email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Password` varchar(15) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- RELATIONS FOR TABLE `admin`:
---
 
 --
 -- Dumping data for table `admin`
@@ -57,12 +51,6 @@ CREATE TABLE `bill` (
   `PriceTotal` int(10) NOT NULL,
   `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- RELATIONS FOR TABLE `bill`:
---   `UserID`
---       `user` -> `ID`
---
 
 --
 -- Dumping data for table `bill`
@@ -86,14 +74,6 @@ CREATE TABLE `cart` (
   `UserID` int(6) NOT NULL,
   `Number` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- RELATIONS FOR TABLE `cart`:
---   `ProductID`
---       `product` -> `ID`
---   `UserID`
---       `user` -> `ID`
---
 
 --
 -- Dumping data for table `cart`
@@ -122,14 +102,6 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- RELATIONS FOR TABLE `comment`:
---   `ProductID`
---       `product` -> `ID`
---   `UserID`
---       `user` -> `ID`
---
-
---
 -- Dumping data for table `comment`
 --
 
@@ -148,18 +120,19 @@ INSERT INTO `comment` (`ID`, `ProductID`, `UserID`, `Content`, `Time`) VALUES
 
 CREATE TABLE `contact` (
   `ID` int(6) NOT NULL,
-  `UserID` int(6) NOT NULL,
+  `Email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Sub` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Comment` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- RELATIONS FOR TABLE `contact`:
---   `UserID`
---       `user` -> `ID`
+-- Dumping data for table `contact`
 --
-INSERT INTO `contact` (`ID`, `UserID`, `Sub`, `Comment`) VALUES (NULL, '1', 'Sản phẩm lỗi', 'Thông báo với ban quản trị sản phẩm Loa Bluetooth Remax RM-M1 bị lỗi');
-INSERT INTO `contact` (`ID`, `UserID`, `Sub`, `Comment`) VALUES (NULL, '3', 'Sản phẩm tuyệt vời', 'Rất cám ơn shop đã bán cho tôi 1 sản phẩm tuyệt vời: Loa Bluetooth 6000mAH JBL Pulse 2. Tôi rất hài lòng');
+
+INSERT INTO `contact` (`ID`, `Email`, `Sub`, `Comment`) VALUES
+(1, 'nghoapc@gmail.com', 'Sản phẩm lỗi', 'Sản phẩm Loa Bluetooth Remax RM-M1 bị lỗi mong shop bảo hành giúp tôi. Trân trọng cám ơn'),
+(2, '51301387@hcmut.edu.vn', 'Sản phẩm tuyệt vời', 'Cám ơn shop đã bán cho tôi sản phẩm Loa Bluetooth 6000mAH JBL Pulse 2, sản phẩm rất tuyệt, tôi sẽ tiếp tục ủng hộ shop.');
+
 -- --------------------------------------------------------
 
 --
@@ -173,14 +146,6 @@ CREATE TABLE `payment` (
   `Num` int(2) NOT NULL,
   `Price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- RELATIONS FOR TABLE `payment`:
---   `BillID`
---       `bill` -> `ID`
---   `ProductID`
---       `user` -> `ID`
---
 
 --
 -- Dumping data for table `payment`
@@ -215,10 +180,6 @@ CREATE TABLE `product` (
   `NumVote` int(4) NOT NULL DEFAULT '0',
   `NumBuy` int(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- RELATIONS FOR TABLE `product`:
---
 
 --
 -- Dumping data for table `product`
@@ -291,14 +252,6 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- RELATIONS FOR TABLE `rating`:
---   `ProductID`
---       `product` -> `ID`
---   `UserID`
---       `user` -> `ID`
---
-
---
 -- Dumping data for table `rating`
 --
 
@@ -323,15 +276,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- RELATIONS FOR TABLE `user`:
---
-
---
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Address`) VALUES
-(1, 'QuangHung', '123456', 'hqh@gmail.com', 'Hong Quang Hung', ''),
+(1, 'QuangHung', '123456', 'hqh@gmail.com', 'Hong Quang Hung', 'z'),
 (7, 'ThaiHoa', '123456', 'game@ya.com', 'Nguyễn Thái Hòa', NULL),
 (8, 'TranHoa', '123456', 'hoa@gmail.com', 'Trần Thị Hoa', NULL),
 (9, 'user', 'user', 'user@gmail.com', 'No Name', NULL);
@@ -424,7 +373,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `payment`
 --
@@ -444,7 +393,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

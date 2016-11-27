@@ -43,12 +43,11 @@
                         <div class="title-topic">
                         	<h2>Liên Hệ</h2>
                         </div>
-                        <form action="#" method="get" class="contact-form">
-                            <div class="form-group width-50per"><input id="name" type="text" placeholder="NAME" class="form-control"></div>
-                            <div class="form-group width-50per"><input id="email" type="text" placeholder="EMAIL" class="form-control"></div>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group width-100per"><input id="email" type="text" placeholder="EMAIL" class="form-control"></div>
                             <div class="form-group width-100per"><input id="subject" type="text" placeholder="SUBJECT" class="form-control"></div>
-                            <div class="form-group width-100per"><textarea id="textarea" rows="3" placeholder="COMMENT" class="form-control form-textarea"></textarea></div>
-                            <div class="btn-wrapper"><button type="submit" class="btn btn-style-1" style="border-radius:4px;">Submit</button></div>
+                            <div class="form-group width-100per"><textarea id="comment" rows="3" placeholder="COMMENT" class="form-control form-textarea"></textarea></div>
+                            <div class="btn-wrapper"><button type="submit" class="btn btn-style-1" style="border-radius:4px;" onclick="addContact()">Submit</button></div>
                         </form>
                     </div>
                 </div>
@@ -81,5 +80,6 @@
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
+    <script src="addContact.js"></script>
 </body>
 </html>
