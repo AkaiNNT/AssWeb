@@ -3,8 +3,9 @@
 <head>
   <title>Admin | Contact</title>
 	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="../css/admin/style.css">
   <link href="../css/admin/bootstrap.min.css" rel="stylesheet">
-
   <link href="../css/admin/simple-sidebar.css" rel="stylesheet">
   <link href="../css/admin/layout.css" rel="stylesheet">
   <link href="../css/admin/contact.css" rel="stylesheet">
@@ -57,6 +58,7 @@
   
 <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 <script type="text/javascript" src="../js/script_contact.js"></script>
 </body>
 </html>

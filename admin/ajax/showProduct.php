@@ -1,7 +1,7 @@
 <?php 
 	include('config.php');
 
-	$data = '<table class="table table-bordered table-striped">
+	$data = '<table class="responstable">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
