@@ -48,70 +48,7 @@
       </div>
   </div>
   <div class="col-md-10 col-md-offset-2">
-    <button type="button" class="btn btn-success" data-toggle="modal" href='#modal-add-user' style="margin: 40px 15px">Add</button>
-    <div class="modal fade" id="modal-add-user">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Add New Rating</h4>
-          </div>
-          <div class="modal-body">
-            <form method="POST" role="form">                       
-              <div class="form-group">
-                <label for="">UserID</label>
-                <input type="text" class="form-control" id="user_id" placeholder="UserID">
-              </div>
-              <div class="form-group">
-                <label for="">ProductID</label>
-                <input type="text" class="form-control" id="product_id" placeholder="ProductID">
-              </div>
-              <div class="form-group">
-                <label for="">Star</label>
-                <input type="text" class="form-control" id="star" placeholder="Star">
-              </div>
-           </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="addRating()">Add Rating</button>
-            </div>
-        </div>
-      </div>
-    </div>
-      <!-- /modal-add-new-car -->
-
-
-    <div class="modal fade" id="modal-edit-car">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Edit User</h4>
-                </div>
-                <div class="modal-body">
-                    <form method="POST" role="form">                       
-                        <div class="form-group">
-                            <label for="">UserID</label>
-                            <input type="text" class="form-control" id="edit_user_name" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="">ProductID</label>
-                            <input type="text" class="form-control" id="edit_user_email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Star</label>
-                            <input type="text" class="form-control" id="edit_user_fullname" placeholder="FullName">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="saveEditUser()">Save changes</button>
-                    <input type="hidden" id="user_id_to_edit">
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div id="ratingTable">
           
     </div>

@@ -158,7 +158,8 @@ CREATE TABLE `contact` (
 --   `UserID`
 --       `user` -> `ID`
 --
-
+INSERT INTO `contact` (`ID`, `UserID`, `Sub`, `Comment`) VALUES (NULL, '1', 'Sản phẩm lỗi', 'Thông báo với ban quản trị sản phẩm Loa Bluetooth Remax RM-M1 bị lỗi');
+INSERT INTO `contact` (`ID`, `UserID`, `Sub`, `Comment`) VALUES (NULL, '3', 'Sản phẩm tuyệt vời', 'Rất cám ơn shop đã bán cho tôi 1 sản phẩm tuyệt vời: Loa Bluetooth 6000mAH JBL Pulse 2. Tôi rất hài lòng');
 -- --------------------------------------------------------
 
 --

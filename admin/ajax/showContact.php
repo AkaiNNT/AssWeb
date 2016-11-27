@@ -7,6 +7,7 @@
                     <th>UserID</th>
                     <th>Sub</th>
                     <th>Comment</th>
+                    <th>Action</th>
                 </tr>';
 
     try {
@@ -20,7 +21,7 @@
 		    $data .= '<td>' . $row['Sub'] . '</td>';
 		    $data .= '<td>' . $row['Comment'] . '</td>';
 
-		    $data .= '<td><button type="button" class="btn btn-primary" onclick="editUser(' . $row['ID'] . ')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteUser(' . $row['ID'] . ')">Delete</button></td>';
+		    $data .= '<td><button type="button" class="btn btn-danger" onclick="deleteUser(' . $row['ID'] . ')">Delete</button></td>';
 		    $data .= '</tr>';
 		}
 		$data .= '</table>';
