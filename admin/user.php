@@ -49,7 +49,7 @@
                         Page
                     </a>
                 </li>
-                <li>
+                <li class="admin-active">
                     <a href="../admin/user.php">User</a>
                 </li>
                 <li>

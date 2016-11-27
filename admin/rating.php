@@ -37,7 +37,7 @@
                 <li>
                     <a href="../admin/product.php">Product</a>
                 </li>
-                <li>
+                <li class="admin-active">
                     <a href="../admin/rating.php">Ratting</a>
                 </li>
                 <li>

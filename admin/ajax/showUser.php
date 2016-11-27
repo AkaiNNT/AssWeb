@@ -6,6 +6,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Password</th>
                     <th>FullName</th>
                     <th>Address</th>
                     <th>Action</th>
@@ -20,6 +21,7 @@
 		    $data .= '<td>' . $row['ID'] . '</td>';
 		    $data .= '<td>' . $row['Username'] . '</td>';
 		    $data .= '<td>' . $row['Email'] . '</td>';
+		    $data .= '<td>' . $row['Password'] . '</td>';
 		    $data .= '<td>' . $row['FullName'] . '</td>';
 		    $data .= '<td>' . $row['Address'] . '</td>';
 

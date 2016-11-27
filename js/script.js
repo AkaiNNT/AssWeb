@@ -65,6 +65,7 @@ function editUser(user_id) {
             var user = JSON.parse(data);
             $("#edit_user_name").val(user.Username);
             $("#edit_user_email").val(user.Email);
+            $("#edit_user_password").val(user.Password);
             $("#edit_user_fullname").val(user.FullName);
             $("#edit_user_address").val(user.Address);
         }

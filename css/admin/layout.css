@@ -190,3 +190,6 @@ li{
 #logout {
   float: right;
 }
+.admin-active{
+  background-color: #e8e8e8;
+}

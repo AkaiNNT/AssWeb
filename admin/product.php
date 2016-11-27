@@ -40,7 +40,7 @@
                 <li>
                     <a href="../admin/user.php">User</a>
                 </li>
-                <li>
+                <li class="admin-active">
                     <a href="../admin/product.php">Product</a>
                 </li>
                 <li>

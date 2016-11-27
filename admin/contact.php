@@ -40,7 +40,7 @@
                 <li>
                     <a href="../admin/rating.php">Ratting</a>
                 </li>
-                <li>
+                <li class="admin-active">
                     <a href="../admin/contact.php">Contact</a>
                 </li>
             </ul>
