@@ -106,6 +106,7 @@ function delcomment(id){
 		success: function(string){
 			if(string == '1'){
 				$('#comment'+id.toString()).remove();
+				$('#number-comment').text((parseInt($('#number-comment').text())-1).toString());
 			}
 		}
 	});

@@ -76,6 +76,18 @@ function getProductData() {
 			T = total;
 		}
 	});
+	$.ajax({	
+		url: "../php/loadsample.php",
+		type: "get",	
+		dataType: "text",
+		success: function(string){
+			var d = JSON.parse(string);
+			for(var i = 0;i < d.length ; i++){
+				str = $('<div class="col-lg-3 col-sm-3 spd" style="text-align:center;" onclick="product('+d[i].ID+')"><img src="../img/'+d[i].Type+'/'+d[i].Name+'/1.jpg" alt="" style="height:20em;width:100%;"><p>'+d[i].Name+'</p></div>');
+				$("#Product-same-show").prepend(str);
+			}
+		}
+	});
 }
 function product(id){
 	$.ajax({
@@ -133,4 +145,16 @@ function update(id){
 		$("#Shipping").text(ship.toString());
 		$("#Order").text((total+ship).toString());
 
+}
+function product(id){
+	$.ajax({
+		url: '../php/product-details.php',
+		type: "post",
+		data:{
+			'id':id,
+		},
+		success: function(str){
+			window.location.href = 'http://localhost/AssWeb/product';
+		}
+	});
 }
