@@ -17,6 +17,8 @@
 		
 		if($result1->num_rows == 0){
 			$result2 = mysqli_query($GLOBALS['dbhandle'],"INSERT INTO cart VALUES(NULL,$pid,$uid,$num)");
+			if(!isset($_SESSION['addcart'])) $_SESSION['addcart'] = 1;
+			else $_SESSION['addcart'] = $_SESSION['addcart'] +1;
 			echo 1;
 		}
 		else echo 0;

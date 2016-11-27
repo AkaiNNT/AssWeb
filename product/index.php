@@ -43,7 +43,11 @@
               'num':num
             },
             success: function(str){
-              if(parseInt(str)==1) $("#success").modal('show');
+              if(parseInt(str)==1) {
+                $('#Tinnhan').css('visibility','visible');
+                $('#Tinnhan').text((parseInt($('#Tinnhan').text())+1).toString());
+                $("#success").modal('show');
+              }
               else if(parseInt(str)==0) $("#error").modal('show');
               else $("#LoginModal").modal('show');
             }
@@ -243,10 +247,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="../vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="../js/enter-search.js"></script>
     <script src="../js/creative.min.js"></script>
     <script src="../js/star-rating.js"></script>
     <script src="../js/product-detail.js"></script>
-    <script src="../js/enter-search.js"></script>
     <script src="../js/modal2.js"></script>
 
 </body>

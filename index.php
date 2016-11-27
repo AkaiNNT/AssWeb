@@ -51,7 +51,16 @@
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                         if(isset($_SESSION['username'])){
-                            echo '<li><a class="page-scroll" href="cart">Giỏ Hàng</a></li>';
+                            echo '<li><a class="page-scroll" href="cart">Giỏ Hàng<span class="glyphicon glyphicon-shopping-cart" style="margin-left:5px;"></span><span id="Tinnhan" class="badge pull-right" style="margin: -7px 0px 0px -7px;background-color:red;"> 0 </span></a></li>';
+                        }
+                        if(isset($_SESSION['addcart'])){
+                            echo '<script type="text/javascript">
+                                    document.getElementById("Tinnhan").style.visibility = "visible";
+                                    document.getElementById("Tinnhan").innerHTML = '.$_SESSION['addcart'].';
+                                 </script>';
+                        }
+                        else{
+                            echo '<script type="text/javascript">document.getElementById("Tinnhan").style.visibility = "hidden";</script>';
                         }
                     ?>
                     
