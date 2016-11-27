@@ -98,23 +98,8 @@
         <div class="clear"></div>
     </div>
     <div style="border-bottom:1px solid #333;"><h4>Sản phẩm liên quan</h4></div>
-    <div class="Product-same">
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/mp3-Mini.jpg" alt="" style="height:20em;width:100%;">
-            <p>Portable Jogging Mini Clip Mp3</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/mp3-NVPRO.jpg" alt="" style="height:20em;width:100%;">
-            <p>Mp3 NVPRO Minion và Thẻ nhớ Sandisk 8GB</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/mp3-xanh.jpg" alt="" style="height:20em;width:100%;">
-            <p>May nghe nhac mp3 xanh</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 spd" style="text-align:center;">
-            <img src="../img/mp3-Mini.jpg" alt="" style="height:20em;width:100%;">
-            <p>Loa kéo bluetooth Temeisheng A73</p>
-        </div>
+    <div class="Product-same" id="Product-same-show" >
+        
         <div class="clear"></div>
     </div>
 

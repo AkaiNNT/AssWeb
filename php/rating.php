@@ -31,6 +31,6 @@
 		mysqli_query($GLOBALS['dbhandle'],"UPDATE product SET star =$updateStar WHERE ID = $pid");
 		echo 2;
 	}
-
+	
 	mysqli_close($dbhandle);
 ?>
