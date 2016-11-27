@@ -8,6 +8,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.5-dist/css/bootstrap.css"/>
+  <link href="../css/admin/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../css/admin/simple-sidebar.css" rel="stylesheet">
   <link href="../css/admin/user.css" rel="stylesheet">
   <link href="../css/admin/layout.css" rel="stylesheet">
 </head>
@@ -24,24 +27,31 @@
 </form>
   <div class="row">
     <div class="col-md-2">
-      <div class="left-menu" id="left-menu">
-        <ul class="list-group">                
-          <li class="list-group-item center-text">
-            <a href="../admin/user.php">User</a> 
-          </li>
-          <li class="list-group-item center-text">
-            <a href="../admin/product.php">Product</a>
-          </li>
-          <li class="list-group-item center-text">
-            <a href="../admin/rating.php">Rating</a>
-          </li>
-          <li class="list-group-item center-text">
-            <a href="../admin/contact.php">Contact</a>
-          </li>
-        </ul>
+      <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../">
+                        Page
+                    </a>
+                </li>
+                <li>
+                    <a href="../admin/user.php">User</a>
+                </li>
+                <li>
+                    <a href="../admin/product.php">Product</a>
+                </li>
+                <li>
+                    <a href="../admin/rating.php">Ratting</a>
+                </li>
+                <li>
+                    <a href="../admin/contact.php">Contact</a>
+                </li>
+            </ul>
+        </div>
       </div>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 col-md-offset-2">
       <button type="button" class="btn btn-success" data-toggle="modal" href='#modal-add-product' style="margin: 40px 15px">Add</button>
       <div class="modal fade" id="modal-add-product">
         <div class="modal-dialog">
