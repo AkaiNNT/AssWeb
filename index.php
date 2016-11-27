@@ -199,7 +199,179 @@
             </div>
         </div>
     </section>
-    <section>
+    <section style="padding: 30px;">
+    <h1>Top Rating</h1>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active item1">
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        <div class="item item1">
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        <div class="item item1">
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        ...
+      </div>
+    </section>
+    <section style="padding: 30px;">
+    <h1>Top Buy</h1>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active item1">
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        <div class="item item1">
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        <div class="item item1">
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        ...
+      </div>
+    </section>
+    <section style="padding: 30px;">
+    <h1>Top New</h1>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active item1">
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        <div class="item item1">
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        <div class="item item1">
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/2.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="img/resize/1.jpg" class="img-responsive" alt="">
+          </div>
+          <div class="carousel-caption">
+            ...
+          </div>
+        </div>
+        ...
+      </div>
+    </section>
+    <section style="padding: 30px;">
+    <h1>Random Product</h1>
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">

@@ -1,7 +1,7 @@
 <?php
 	$username = "root";
 	$password = "";
-	$hostname = "localhost"; 
+	$hostname = "127.0.0.1"; 
 
 	//connection to the database
 	$dbhandle = mysqli_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
