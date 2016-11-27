@@ -41,7 +41,7 @@
                 <div class="col-sm-6 col-xs-12">
                     <div class="contact-form-wrapper">
                         <div class="title-topic">
-                        	<h2>Contact</h2>
+                        	<h2>Liên Hệ</h2>
                         </div>
                         <form action="#" method="get" class="contact-form">
                             <div class="form-group width-50per"><input id="name" type="text" placeholder="NAME" class="form-control"></div>
@@ -55,10 +55,11 @@
                 <div class="col-sm-6 col-xs-12">
                     <div class="block-info">
                         <div class="title-topic">
-                        	<h2>Contact Information</h2>
+                        	<h2>Thông Tin Liên Hệ</h2>
                         </div>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incun ididunt ut labore et dolore magna aliqua. Ut enim ad min im ven iam, quis nostrud eict xerct ation ullamco laboris nisi ut aliquip
-                            ex ea commodo cons equa at. </div>
+                        <div class="text"><p>Mọi thắc mắc xin vui lòng liên hệ chúng tôi. Vui lòng điền đầy đủ thông tin cần thiết và gửi về theo biểu mẫu kế bên. Chúng tôi sẽ liên lạc và trả lời sớm nhất.</p>
+                        <p>Chúc quý khách mua hàng vui vẻ</p>
+                        </div>
                          <div class="info">
                          	<ul class="list-unstyled contact-us-list-info">
                                 <li><i class="icons fa fa-envelope-o"></i><a href=""> Hello@gmail.com</a></li>

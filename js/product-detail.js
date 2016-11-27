@@ -33,13 +33,13 @@ function getProductData() {
 		}
 	});
 }
-function comment(name,content,time){
-	return $('<div class="user"><div class="col-md-1"><img src="../img/avatar_login.png" alt="" style="width:90px;height:90px"></div><div class="col-md-11" style="padding-left:20px;"><a href="#" style="font-size:125%;color:red;">'+name+'</a><br><p>'+content+'</p><a href="#" class="ac">Like</a><span> - </span><a href="#" class="ac">Reply</a><span> - </span><span><i style="font-size:80%;">'+time+'</i></span></div><div class="clear"></div></div>');
+function comment(id,name,content,time){
+	return $('<div class="user" id="comment'+id+'"><div class="col-md-1"><img src="../img/avatar_login.png" alt="" style="width:90px;height:90px"></div><div class="col-md-11" style="padding-left:20px;"><a href="#" style="font-size:125%;color:red;">'+name+'</a><button type="button" class="close" style="color:red" onclick="delcomment('+id+')">&times;</button><br><p>'+content+'</p><a href="#" class="ac">Like</a><span> - </span><a href="#" class="ac">Reply</a><span> - </span><span><i style="font-size:80%;">'+time+'</i></span></div><div class="clear"></div></div>');
 }
 function getCommentData(){
 	$('#number-comment').text(data.comment.length.toString());
 	for (var i = 0; i < data.comment.length; i++) {
-		var str = comment(data.comment[i].Username,data.comment[i].Content,data.comment[i].Time);
+		var str = comment(data.comment[i].ID,data.comment[i].Username,data.comment[i].Content,data.comment[i].Time);
 		$("#list-comment").append(str);
 	}
 }
@@ -87,7 +87,7 @@ $('#Btn-Comment').click(function(){
 			},
 			success: function(string){
 				var d = JSON.parse(string);
-				var str = comment(d[0].Username,d[0].content,d[0].Time);
+				var str = comment(d[0].ID,d[0].Username,d[0].content,d[0].Time);
 				$("#list-comment").prepend(str);
 				$('#number-comment').text((parseInt($('#number-comment').text())+1).toString());
 				$("#mycomment").val("");
@@ -95,4 +95,19 @@ $('#Btn-Comment').click(function(){
 		});
 	}
 });
+
+function delcomment(id){
+	$.ajax({	
+		url: "../php/delcomment.php",
+		type: "post",	
+		data:{
+			'cid':id
+		},
+		success: function(string){
+			if(string == '1'){
+				$('#comment'+id.toString()).remove();
+			}
+		}
+	});
+}
 
