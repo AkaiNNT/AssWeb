@@ -10,6 +10,8 @@
                     <th>Class</th>
                     <th>PostDay</th>
                     <th>Description</th>
+                    <th>Star</th>
+                    <th>NumBuy</th>
                     <th>Acction</th>
                 </tr>';
 
@@ -26,6 +28,8 @@
 		    $data .= '<td>' . $row['Class'] . '</td>';
 		    $data .= '<td>' . $row['PostDay'] . '</td>';
 		    $data .= '<td>' . $row['Description'] . '</td>';
+		    $data .= '<td>' . $row['star'] . '</td>';
+		    $data .= '<td>' . $row['NumBuy'] . '</td>';
 
 		    $data .= '<td><button type="button" class="btn btn-primary" onclick="editProduct(' . $row['ID'] . ')">Edit</button><button type="button" class="btn btn-danger" onclick="deleteProduct(' . $row['ID'] . ')">Delete</button></td>';
 		    $data .= '</tr>';

@@ -2,21 +2,27 @@
 <html>
 <head>
 	<title>Admin</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link href="../css/admin/layout.css" rel="stylesheet">
 </head>
 <body>
 <?php
 	$msg ='';
     $login_form = <<< EOD
-<form name="login" id="login" method="POST" action="check_login.php">
-<p><label for="username">Enter Your Email: </label><input type="text" size="40" name="username" id="username" value="" /></p>
-<p><label for="password">Enter Your Password: </label><input type="password" size="40" name="password" id="password" value="" /></p>
-<p><input type="submit" name="submit" id="submit" value="Submit"/> <input type="reset" name="reset" id="reset" value="reset"/></p>
-</form>
+<div class="login">
+	<h1>Login</h1>
+    <form name="login" id="login" method="POST" action="check_login.php">
+    	<input type="text" name="username" id="username" placeholder="Username" required="required" />
+        <input type="password" name="password" id="password" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>
+    </div>
 EOD;
 // $msg = $_GET['msg'];
 if($msg!='') echo '<p>'.$msg.'</p>';
-echo "<h1>Please enter your Login Information</h1>";
 echo $login_form;
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
