@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2016 at 05:47 AM
+-- Generation Time: Nov 27, 2016 at 04:31 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.37
 
@@ -35,6 +35,10 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `admin`:
+--
+
+--
 -- Dumping data for table `admin`
 --
 
@@ -49,17 +53,26 @@ INSERT INTO `admin` (`ID`, `Email`, `Password`) VALUES
 
 CREATE TABLE `bill` (
   `ID` int(6) NOT NULL,
+  `UserID` int(6) NOT NULL,
   `PriceTotal` int(10) NOT NULL,
   `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `bill`:
+--   `UserID`
+--       `user` -> `ID`
+--
+
+--
 -- Dumping data for table `bill`
 --
 
-INSERT INTO `bill` (`ID`, `PriceTotal`, `Date`) VALUES
-(5, 6908000, '2016-11-25 13:54:07'),
-(6, 2350000, '2016-11-25 14:39:37');
+INSERT INTO `bill` (`ID`, `UserID`, `PriceTotal`, `Date`) VALUES
+(5, 1, 6908000, '2016-11-27 03:15:58'),
+(6, 1, 2350000, '2016-11-27 03:16:12'),
+(7, 8, 8097000, '2016-11-27 03:16:08'),
+(8, 8, 4798000, '2016-11-27 03:22:08');
 
 -- --------------------------------------------------------
 
@@ -75,6 +88,14 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `cart`:
+--   `ProductID`
+--       `product` -> `ID`
+--   `UserID`
+--       `user` -> `ID`
+--
+
+--
 -- Dumping data for table `cart`
 --
 
@@ -83,10 +104,8 @@ INSERT INTO `cart` (`ID`, `ProductID`, `UserID`, `Number`) VALUES
 (11, 5, 7, 1),
 (12, 35, 7, 1),
 (13, 7, 7, 2),
-(15, 14, 8, 1),
-(16, 33, 8, 1),
-(17, 5, 8, 2),
-(41, 31, 1, 1);
+(41, 31, 1, 1),
+(43, 41, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -103,6 +122,14 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `comment`:
+--   `ProductID`
+--       `product` -> `ID`
+--   `UserID`
+--       `user` -> `ID`
+--
+
+--
 -- Dumping data for table `comment`
 --
 
@@ -110,7 +137,8 @@ INSERT INTO `comment` (`ID`, `ProductID`, `UserID`, `Content`, `Time`) VALUES
 (1, 2, 1, 'Hàng cũng tốt!', '2016-11-21 15:14:45'),
 (2, 2, 7, 'Thấy cũng thường!', '2016-11-21 15:24:46'),
 (4, 2, 1, 'Ok', '2016-11-22 14:40:33'),
-(6, 2, 8, 'Demo', '2016-11-22 17:03:13');
+(6, 2, 8, 'Demo', '2016-11-22 17:03:13'),
+(7, 1, 1, 'Test 2', '2016-11-27 02:45:26');
 
 -- --------------------------------------------------------
 
@@ -125,6 +153,12 @@ CREATE TABLE `contact` (
   `Comment` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- RELATIONS FOR TABLE `contact`:
+--   `UserID`
+--       `user` -> `ID`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -134,21 +168,33 @@ CREATE TABLE `contact` (
 CREATE TABLE `payment` (
   `ID` int(6) NOT NULL,
   `BillID` int(6) NOT NULL,
-  `UserID` int(6) NOT NULL,
   `ProductID` int(6) NOT NULL,
   `Num` int(2) NOT NULL,
   `Price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `payment`:
+--   `BillID`
+--       `bill` -> `ID`
+--   `ProductID`
+--       `user` -> `ID`
+--
+
+--
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`ID`, `BillID`, `UserID`, `ProductID`, `Num`, `Price`) VALUES
-(9, 5, 1, 1, 2, 179000),
-(10, 5, 1, 32, 1, 1750000),
-(11, 5, 1, 36, 3, 1600000),
-(12, 6, 1, 5, 3, 750000);
+INSERT INTO `payment` (`ID`, `BillID`, `ProductID`, `Num`, `Price`) VALUES
+(9, 5, 1, 2, 179000),
+(10, 5, 32, 1, 1750000),
+(11, 5, 36, 3, 1600000),
+(12, 6, 5, 3, 750000),
+(13, 7, 14, 3, 899000),
+(14, 7, 33, 1, 3800000),
+(15, 7, 5, 2, 750000),
+(16, 8, 7, 2, 999000),
+(17, 8, 8, 1, 2700000);
 
 -- --------------------------------------------------------
 
@@ -170,6 +216,10 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `product`:
+--
+
+--
 -- Dumping data for table `product`
 --
 
@@ -178,16 +228,16 @@ INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Descr
 (2, 'Loa Bluetooth Remax RM-M1', 179000, 'Loa', 'Bluetooth', '2016-11-13', 'Sản Phẩm Loa Bluetooth tích hợp FM Radio và Micro phone giúp bạn vừa có thể nghe nhạc, vừa có thể nhận và trả lời cuộc Đàm thoại thông qua kết nối Bluetooth. Hoặc làm nguồn phát trực tiếp và đồng thời chơi những Bản nhạc từ những thiết bị như USB,Thẻ nhớ…  thông qua những khe cắm tực tiếp trên loa.', 2.5, 2, 0),
 (3, 'Loa dàn 2.0 Senicc SN-462', 260000, 'Loa', 'Senicc', '2016-11-14', 'Tương thích với Điện thoại,máy tính,laptop,máy tính bảng… Nghe nhạc,chơi game', 0, 0, 0),
 (4, 'Loa dàn 2.0 Senicc SN-467', 260000, 'Loa', 'Senicc', '2016-11-14', 'Kích thước nhỏ gọn, có tính di động cao, phù hợp với nhiều không gian hoàn cảnh sử dụng như đi du lịch, nghe trong phòng,nơi làm việc...\r\n Thích hợp cho nhiều thiết công nghệ khác nhau: điện thoại, máy tính bảng, máy tính xách tay, máy tính để bàn, máy mp3…\r\n Loa SENICC SN-467 đáp ứng để thể hiện tất cả các âm ở dải âm tần 150-15khz\r\n Cho âm thanh khá chung thực\r\n Loa SENICC SN 467 có thể đáp ứng tần số 150-15kHz độ  và Tỷ lệ tín hiệu trên nhiễu của SENICC SN 467 là >60dB,\r\n Loa mini SENICC sử dụng nguồn 5V usb,Jack tín hiệu 3.5 mm  cho phép kết nối với hầu hết các thiết bị âm thanh Digital và phát âm thanh STREORIO', 0, 0, 0),
-(5, 'Loa bluetooth Rocky CR-X6', 750000, 'Loa', 'Bluetooth', '2016-11-12', 'Thiết kế nhỏ gọn dễ thương.', 0, 0, 3),
+(5, 'Loa bluetooth Rocky CR-X6', 750000, 'Loa', 'Bluetooth', '2016-11-12', 'Thiết kế nhỏ gọn dễ thương.', 0, 0, 5),
 (6, 'Loa dàn 2.1 Soundmax A960', 899000, 'Loa', 'Soundmax', '2016-11-13', 'Thuộc dòng loa 2.1 không quá cồng kềnh nhưng công suất đủ lớn để đảm báo phát âm chuẩn, to, rõ nét,…\r\nNgoài tính năng Bluetooth thì còn có khe cắm thẻ nhớ và USB.\r\nRemote kèm theo hỗ trợ các chức năng chơi nhạc cơ bản.', 0, 0, 0),
-(7, 'Loa Remax Bluetooth cao cấp RB-M7', 999000, 'Loa', 'Bluetooth', '2016-11-14', 'Tương thích với tất cả các thiết bị thu phát bluetooth Kết nối không dây 4.0', 0, 0, 0),
-(8, 'Loa Bluetooth Creative Sound Blaster SPBL-Free', 2700000, 'Loa', 'Bluetooth', '2016-11-16', 'Thiết kế Creative tương đương một bình thể thao, giúp cho bạn có thể gắn lên một chiếc xe đạp thể thao dễ dàng.', 0, 0, 0),
+(7, 'Loa Remax Bluetooth cao cấp RB-M7', 999000, 'Loa', 'Bluetooth', '2016-11-14', 'Tương thích với tất cả các thiết bị thu phát bluetooth Kết nối không dây 4.0', 0, 0, 2),
+(8, 'Loa Bluetooth Creative Sound Blaster SPBL-Free', 2700000, 'Loa', 'Bluetooth', '2016-11-16', 'Thiết kế Creative tương đương một bình thể thao, giúp cho bạn có thể gắn lên một chiếc xe đạp thể thao dễ dàng.', 0, 0, 1),
 (9, 'Loa Bluetooth Speaker System Soundmax M1', 1290000, 'Loa', 'Bluetooth', '2016-11-13', 'Soundmax M1 khá gọn gàng với kích thước 202 x 168 x 350 mm và nặng chỉ 2.6 kg, cộng thêm việc trang bị quai xách ngay trên đỉnh loa, nên người dùng có thể dễ dàng mang Soundmax M1 theo bên mình. Soundmax M1 còn có thiết kế kiểu màng loa và cụm nút chức năng cùng các ngõ vào thiết yếu trên Soundmax M1 đều được bố trí ngay ở mặt trước khá tiện lợi.', 0, 0, 0),
 (10, 'Loa Dàn 2.0 Soundmax A130 Blue', 179000, 'Loa', 'Soundmax', '2016-11-14', 'Thiết kế nhỏ, gọn, mang đến sự tiện lợi cao\r\nKhông dẫn nhiệt, không dẫn điện khi sử dụng trong 1 thời gian dài\r\nDễ sử dụng: tổ hợp phím điều khiển thiết kế đẹp mắt và thuận tiện trên dây nguồn\r\nThông số kỹ thuật: công suất 6W, tần số 50Hz - 20KHz mang đến không gian âm thanh sống động\r\nMàu sắc: Đen viền đỏ, Đen viền xanh', 0, 0, 0),
 (11, 'Loa mini Powermax TS-02 Bluetooth', 299000, 'Loa', 'Bluetooth', '2016-11-15', 'Sản Phẩm Loa Bluetooth tích hợp FM Radio và Micro phone giúp bạn vừa có thể nghe nhạc, vừa có thể nhận và trả lời cuộc Đàm thoại thông qua kết nối Bluetooth.\r\nHoặc làm nguồn phát trực tiếp và đồng thời chơi những Bản nhạc từ những thiết bị như USB,Thẻ nhớ…  thông qua những khe cắm tực tiếp trên loa', 0, 0, 0),
 (12, 'Loa dàn 2.1 Microlab M108U', 559000, 'Loa', 'Microlab', '2016-11-12', 'Với thiết kế trang nhã, tiện dụng phù hợp cho hầu hết các nhu cầu nghe nhạc, dễ sử dụng. Loa sub cho âm trầm mạnh mẽ và các loa vệ tinh nhỏ gọn cho mức âm cao rõ ràng. Nhu cầu sử dụng giải trí đa phương tiện với thiết kế bên trong đường hầm phản xạ cho âm bass tốt hơn và khả năng kết hợp với nhiều thiết bị, chắc chắn loa Microlab M108U 2.1 sẽ mang đến cho bạn những phút giải trí tuyệt vời nhất.', 0, 0, 0),
 (13, 'Loa Powermax TM-01C Bluetooth', 599000, 'Loa', 'Bluetooth', '2016-11-15', 'Loa di động Bluetooth sử dụng công nghệ Supper Bass\r\nPIN gắn trong và tích hợp nhiều tính năng (TF Card,FM Radio,Line-in,Bluetooth Speaker)\r\nHình dáng mô phỏng Ống Kính Máy Chụp Hình và được cấu tạo hoàn toàn bằng kim loại\r\nSử dụng công nghệ cộng hưởng rung và Âm thanh định hướng toàn bộ 360', 0, 0, 0),
-(14, 'Loa Powermax CS-01 bluetooth', 899000, 'Loa', 'Bluetooth', '2016-11-16', 'Loa Powermax CS- 01 Bluetooth tạo ấn tượng bởi ngoại hình vô cùng bắt mắt. Kiểu dáng nhỏ gọn giúp người dùng có thể dễ dàng mang theo đến bất cứ đâu. Thiết kế theo dạng hình tròn với nhiều khoang màu sắc khác nhau giúp sản phẩm trở nên thời trang và nổi bật hơn, đồng thời giúp âm thanh lan tỏa rộng hơn và đều hơn ở cả 4 phía.', 0, 0, 0),
+(14, 'Loa Powermax CS-01 bluetooth', 899000, 'Loa', 'Bluetooth', '2016-11-16', 'Loa Powermax CS- 01 Bluetooth tạo ấn tượng bởi ngoại hình vô cùng bắt mắt. Kiểu dáng nhỏ gọn giúp người dùng có thể dễ dàng mang theo đến bất cứ đâu. Thiết kế theo dạng hình tròn với nhiều khoang màu sắc khác nhau giúp sản phẩm trở nên thời trang và nổi bật hơn, đồng thời giúp âm thanh lan tỏa rộng hơn và đều hơn ở cả 4 phía.', 0, 0, 3),
 (15, 'Loa Rock Space Bluetooth', 999000, 'Loa', 'Bluetooth', '2016-11-17', 'Tương thích với tất cả các thiết bị thu phát bluetooth Hỗ trợ thẻ TF / Đèn LED dùng được 10h.', 0, 0, 0),
 (16, 'Loa Dàn 4.1 Soundmax A8900', 1499000, 'Loa', 'Soundmax', '2016-11-18', 'Hệ thống loa 4.1 có tổng công suất 90W\r\nCụm nút điều chỉnh linh hoạt\r\nMạnh mẽ, hiện đại\r\nKết nối giải trí đa phương tiện', 0, 0, 0),
 (17, 'Loa xách tay Bluetooth & NFC Sony SRS-XB2', 1990000, 'Loa', 'Bluetooth', '2016-11-12', 'Nhỏ gọn dễ dàng mang theo.', 0, 0, 0),
@@ -205,7 +255,7 @@ INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Descr
 (30, 'Loa vi tính Fenda A521', 1050000, 'Loa', 'Fenda', '2016-11-17', 'Thiết kế bề mặt loa không bám bẩn và vệ sinh khá dễ dàng.\r\nCông suất 52W mang đến âm thanh chất lượng cao, sống động và rõ nét.\r\nTích hợp thêm hai cổng kết nối dành riêng cho USB và thẻ nhớ MicroSD.\r\nThao tác dễ dàng với 3 nút điều khiển Play/Pause, Next và Previous.\r\nTương thích và dễ dàng kết nối với laptop, đầu CD/VCD,...\r\nBảo hành 1 năm 1 đổi 1. ', 0, 0, 0),
 (31, 'MP3 Sony Walkman NW-WS410', 1749000, 'Mp3', 'Sony', '2016-11-15', 'Dung lượng 4G, sạc pin nhanh.', 0, 0, 0),
 (32, 'Máy MP3 Walkman NW-E394', 1750000, 'Mp3', 'Sony', '2016-11-21', '-Mặt trước vỏ ngoài làm từ nhôm nguyên chất.\r\n-Màn hình 1.77 inch, QQVGA (160 x 128), 65,536 màu\r\n-Chức năng chính: Nghe nhạc, xem hình, lưu trữ dữ liệu, FM.\r\n-Công nghệ âm thanh Bass Boost, Clear Audio+\r\n-5 band equalizer (Heavy / Pop / Jazz / Unique / Custom)\r\n-Cài đặt giờ và báo thức.', 0, 0, 1),
-(33, 'Sony NWZ-WH505', 3800000, 'Mp3', 'Sony', '2016-11-17', 'Hãng sản xuất: SONY\r\nDung lượng bộ nhớ trong: 16GB', 0, 0, 0),
+(33, 'Sony NWZ-WH505', 3800000, 'Mp3', 'Sony', '2016-11-17', 'Hãng sản xuất: SONY\r\nDung lượng bộ nhớ trong: 16GB', 0, 0, 1),
 (34, 'Apple iPod shuffle 2GB', 100000, 'Mp3', 'Apple', '2016-11-18', 'Tiếng Việt', 0, 0, 0),
 (35, 'Apple iPod Nano 2011 8GB', 3550000, 'Mp3', 'Apple', '2016-11-15', 'Nhỏ gọn kiểu dáng sang trọng.\r\nDung lượng 8G.', 0, 0, 0),
 (36, 'Apple iPod Shuffle 2012 2GB', 1600000, 'Mp3', 'Apple', '2016-11-22', 'Tét tiếng việt', 0, 0, 3),
@@ -240,6 +290,14 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- RELATIONS FOR TABLE `rating`:
+--   `ProductID`
+--       `product` -> `ID`
+--   `UserID`
+--       `user` -> `ID`
+--
+
+--
 -- Dumping data for table `rating`
 --
 
@@ -262,6 +320,10 @@ CREATE TABLE `user` (
   `FullName` varchar(30) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `Address` varchar(50) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- RELATIONS FOR TABLE `user`:
+--
 
 --
 -- Dumping data for table `user`
@@ -346,17 +408,17 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -366,7 +428,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `product`
 --

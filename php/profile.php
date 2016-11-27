@@ -13,7 +13,7 @@
 	$uid = $_SESSION['userId'];
 
 	$result1 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM user WHERE ID = $uid");
-	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill");
+	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill WHERE bill.UserID = $uid");
 	$data = array();
 	while ($row = mysqli_fetch_array($GLOBALS['result1'])){ 
 	    $data['user'][] =  $row;

@@ -16,7 +16,7 @@
 	$num = $_POST['num'];
 	$price = $_POST['price'];
 
-	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO payment VALUES(NULL,$bid,$uid,$pid,$num,$price)");
+	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO payment VALUES(NULL,$bid,$pid,$num,$price)");
 	mysqli_query($GLOBALS['dbhandle'],"UPDATE product SET NumBuy = NumBuy + $num WHERE ID = $pid");
 
 	mysqli_close($dbhandle);
