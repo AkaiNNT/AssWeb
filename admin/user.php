@@ -96,6 +96,10 @@
                             <input type="text" class="form-control" id="edit_user_email" placeholder="Email">
                         </div>
                         <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="text" class="form-control" id="edit_user_password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
                             <label for="">FullName</label>
                             <input type="text" class="form-control" id="edit_user_fullname" placeholder="FullName">
                         </div>
