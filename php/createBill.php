@@ -11,8 +11,9 @@
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
 	$total = $_POST['total'];
+	$uid = $_SESSION['userId'];
 
-	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO bill VALUES(NULL,$total,NULL)");
+	mysqli_query($GLOBALS['dbhandle'],"INSERT INTO bill VALUES(NULL,$uid,$total,NULL)");
 
 	$result2 = mysqli_query($GLOBALS['dbhandle'],"SELECT * FROM bill ORDER BY ID DESC LIMIT 1");
 	$row = mysqli_fetch_array($GLOBALS['result2']);

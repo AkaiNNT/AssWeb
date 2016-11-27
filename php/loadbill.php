@@ -11,6 +11,7 @@
 	mysqli_query($GLOBALS['dbhandle'],'set names utf8');
 
 	$bid = $_POST['bid'];
+	$uid = $_SESSION['userId'];
 
 	$result = mysqli_query($GLOBALS['dbhandle'],"SELECT payment.Price,payment.Num,product.Name,bill.PriceTotal FROM payment,product,bill WHERE payment.BillID = $bid  AND product.ID = payment.ProductID AND bill.ID = payment.BillID");
 	
