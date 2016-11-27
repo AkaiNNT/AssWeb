@@ -11,7 +11,6 @@ function load(){
 		type: "get",	
 		dataType: "text",
 		success: function(string){
-			console.log(string);
 			data = JSON.parse(string);
 			
 			
