@@ -8,30 +8,30 @@ function showRating() {
     );
 }
 
-function addRating() {
-    var user_id = $('#user_id').val();
-    var product_id = $('#user_product').val();
-    var star = $('#star').val();
+// function addRating() {
+//     var user_id = $('#user_id').val();
+//     var product_id = $('#user_product').val();
+//     var star = $('#star').val();
 
-    $.post(
-        'ajax/addRating.php',
-        {
-            user_id: user_id,
-            product_id: product_id,
-            star: star
-        },
-        function(data, status) {
-            $('#modal-add-user').modal('hide');
+//     $.post(
+//         'ajax/addRating.php',
+//         {
+//             user_id: user_id,
+//             product_id: product_id,
+//             star: star
+//         },
+//         function(data, status) {
+//             $('#modal-add-user').modal('hide');
 
-            showRating();
+//             showRating();
 
-            $('#user_id').val('');
-            $('#product_id').val('');
-            $('#star').val('');
+//             $('#user_id').val('');
+//             $('#product_id').val('');
+//             $('#star').val('');
 
-        }
-    )
-}
+//         }
+//     )
+// }
 
 // function deleteUser(user_id) {
 //     var x = confirm('Are you sure?');

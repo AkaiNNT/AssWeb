@@ -9,28 +9,31 @@ function showUser() {
 }
 
 function addUser() {
-    var user_id = $('#user_id').val();
     var user_name = $('#user_name').val();
     var user_email = $('#user_email').val();
     var user_password = $('#user_password').val();
+    var user_address = $('#user_address').val();
+    var user_fullname = $('#user_fullname').val();
 
     $.post(
         'ajax/addUser.php',
         {
-            user_id: user_id,
             user_name: user_name,
             user_email: user_email,
-            user_password: user_password
+            user_password: user_password,
+            user_address: user_address,
+            user_fullname: user_fullname
         },
         function(data, status) {
             $('#modal-add-user').modal('hide');
 
             showUser();
 
-            $('#user_id').val('');
             $('#user_name').val('');
             $('#user_email').val('');
             $('#user_password').val('');
+            $('#user_address').val('');
+            $('#user_fullname').val('');
 
         }
     )
@@ -60,29 +63,32 @@ function editUser(user_id) {
         },
         function (data, status) {
             var user = JSON.parse(data);
-            
-            $("#edit_user_id").val(user.ID);
             $("#edit_user_name").val(user.Username);
             $("#edit_user_email").val(user.Email);
             $("#edit_user_fullname").val(user.FullName);
+            $("#edit_user_address").val(user.Address);
         }
     );
     $("#modal-edit-car").modal("show");
 }
 
-function saveEditCar() {
-    var carID = $('#car_id_to_edit').val();
-    var edit_car_id = $("#edit_car_id").val();
-    var edit_car_name = $("#edit_car_name").val();
-    var edit_car_year = $("#edit_car_year").val();
+function saveEditUser() {
+    var userID = $('#user_id_to_edit').val();
+    var edit_user_name = $("#edit_user_name").val();
+    var edit_user_email = $("#edit_user_email").val();
+    var edit_user_address = $("#edit_user_address").val();
+    var edit_user_fullname = $("#edit_user_fullname").val();
+    var edit_user_password = $("#edit_user_password").val();
   
     $.post(
-        'ajax/saveEditCar.php',
+        'ajax/saveEditUser.php',
         {
-            carID: carID,
-            edit_car_id: edit_car_id,
-            edit_car_name: edit_car_name,
-            edit_car_year: edit_car_year
+            userID: userID,
+            edit_user_name: edit_user_name,
+            edit_user_email: edit_user_email,
+            edit_user_fullname: edit_user_fullname,
+            edit_user_password: edit_user_password,
+            edit_user_address: edit_user_address
         },
         function (data, status) {
             $("#modal-edit-car").modal("hide");

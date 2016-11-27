@@ -91,41 +91,41 @@
         <!-- /modal-add-new-car -->
 
 
-      <div class="modal fade" id="modal-edit-car">
+      <div class="modal fade" id="modal-edit-product">
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">Edit User</h4>
+                      <h4 class="modal-title">Edit Product</h4>
                   </div>
                   <div class="modal-body">
                       <form method="POST" role="form">                       
                           <div class="form-group">
-                              <label for="">ID</label>
-                              <input type="text" class="form-control" id="edit_user_id" placeholder="ID">
-                          </div>
-                          <div class="form-group">
                               <label for="">Name</label>
-                              <input type="text" class="form-control" id="edit_user_name" placeholder="Name">
+                              <input type="text" class="form-control" id="edit_product_name" placeholder="Name">
                           </div>
                           <div class="form-group">
-                              <label for="">Email</label>
-                              <input type="text" class="form-control" id="edit_user_email" placeholder="Email">
+                              <label for="">Price</label>
+                              <input type="text" class="form-control" id="edit_product_price" placeholder="Price">
                           </div>
                           <div class="form-group">
-                              <label for="">FullName</label>
-                              <input type="text" class="form-control" id="edit_user_fullname" placeholder="FullName">
+                              <label for="">Type</label>
+                              <input type="text" class="form-control" id="edit_product_type" placeholder="Type">
                           </div>
                           <div class="form-group">
-                              <label for="">Address</label>
-                              <input type="text" class="form-control" id="edit_user_address" placeholder="Addres">
+                              <label for="">Class</label>
+                              <input type="text" class="form-control" id="edit_product_class" placeholder="Class">
+                          </div>
+                          <div class="form-group">
+                              <label for="">Description</label>
+                              <input type="text" class="form-control" id="edit_product_description" placeholder="Description">
                           </div>
                       </form>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" onclick="saveEditUser()">Save changes</button>
-                      <input type="hidden" id="user_id_to_edit">
+                      <button type="button" class="btn btn-primary" onclick="saveEditProduct()">Save changes</button>
+                      <input type="hidden" id="product_id_to_edit">
                   </div>
               </div>
           </div>

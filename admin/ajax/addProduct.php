@@ -1,7 +1,6 @@
 <?php 
 	if (isset($_POST['product_id']) && isset($_POST['product_name']) && isset($_POST['product_type']) && isset($_POST['product_price']) && isset($_POST['product_class']) && isset($_POST['product_description']) ) {
 		include('config.php');
-		$product_id = $_POST['product_id'];
 		$product_name = $_POST['product_name'];
 		$product_price = $_POST['product_price'];
 		$product_class = $_POST['product_class'];
@@ -9,8 +8,7 @@
 		$product_type = $_POST['product_type'];
 
 		try {
-			$stmt = $conn->prepare('INSERT INTO product (ID, Name, Price,Type,Class,Description) VALUES (:ID, :Name, :Price,:Type,:Class,:Description)');
-			$stmt->bindParam(':ID', $product_id);
+			$stmt = $conn->prepare('INSERT INTO product ( Name, Price,Type,Class,Description) VALUES (:Name, :Price,:Type,:Class,:Description)');
 			$stmt->bindParam(':Name', $product_name);
 			$stmt->bindParam(':Type', $product_type);
 			$stmt->bindParam(':Price', $product_price);

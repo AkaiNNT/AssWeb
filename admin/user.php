@@ -47,14 +47,6 @@
           </div>
           <div class="modal-body">
             <form method="POST" role="form">                       
-              <!-- <div class="form-group">
-                <label for="">ID</label>
-                <input type="text" class="form-control" id="car_id" placeholder="ID">
-              </div> -->
-              <div class="form-group">
-                <label for="">ID</label>
-                <input type="text" class="form-control" id="user_id" placeholder="ID">
-              </div>
               <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="user_name" placeholder="Name">
@@ -95,10 +87,6 @@
                 </div>
                 <div class="modal-body">
                     <form method="POST" role="form">                       
-                        <div class="form-group">
-                            <label for="">ID</label>
-                            <input type="text" class="form-control" id="edit_user_id" placeholder="ID">
-                        </div>
                         <div class="form-group">
                             <label for="">Name</label>
                             <input type="text" class="form-control" id="edit_user_name" placeholder="Name">
