@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2016 at 05:01 AM
+-- Generation Time: Nov 28, 2016 at 05:10 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.5.37
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `shopbanhang`
 --
+CREATE DATABASE IF NOT EXISTS `shopbanhang` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci;
+USE `shopbanhang`;
 
 -- --------------------------------------------------------
 
@@ -137,7 +139,9 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`ID`, `Email`, `Sub`, `Comment`) VALUES
 (1, 'nghoapc@gmail.com', 'Sản phẩm lỗi', 'Sản phẩm Loa Bluetooth Remax RM-M1 bị lỗi mong shop bảo hành giúp tôi. Trân trọng cám ơn'),
-(2, '51301387@hcmut.edu.vn', 'Sản phẩm tuyệt vời', 'Cám ơn shop đã bán cho tôi sản phẩm Loa Bluetooth 6000mAH JBL Pulse 2, sản phẩm rất tuyệt, tôi sẽ tiếp tục ủng hộ shop.');
+(2, '51301387@hcmut.edu.vn', 'Sản phẩm tuyệt vời', 'Cám ơn shop đã bán cho tôi sản phẩm Loa Bluetooth 6000mAH JBL Pulse 2, sản phẩm rất tuyệt, tôi sẽ tiếp tục ủng hộ shop.'),
+(5, '', '', ''),
+(6, 'dsfdsf', '', '');
 
 -- --------------------------------------------------------
 
@@ -382,7 +386,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `payment`
 --
