@@ -117,6 +117,13 @@
     </div>
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+    <?php
+        if(!isset($_SESSION['username'])){ 
+            echo "<script> 
+                        window.location.href = 'http://localhost/AssWeb/';
+                  </script>";
+        }
+    ?>
    
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

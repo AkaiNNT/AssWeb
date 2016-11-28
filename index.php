@@ -29,7 +29,25 @@
     <!-- Theme CSS -->
     <link href="css/creative.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
-
+    <style type="text/css">
+        .item1{
+          height: 242px;
+        }
+        .col-md-4 img{
+          height: 240px;
+          width: 99%;
+          border: 1px solid black;
+        }
+        .col-md-4 img:hover{
+          height: 240px;
+          width: 99%;
+          border: 2px solid black;
+          cursor: pointer;
+        }
+        .carousel-indicators li{
+          border: 1px solid red;
+        }
+    </style>
 
 </head>
 
@@ -200,178 +218,52 @@
         </div>
     </section>
     <section style="padding: 30px;">
-    <h1>Top Rating</h1>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <h1>Sản phẩm được đánh giá tốt nhất</h1>
+      <div id="carousel-example-generic-1" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic-1" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic-1" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic-1" data-slide-to="2"></li>
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        ...
+      <div class="carousel-inner" role="listbox" id="list-product-home-0">
+        
       </div>
     </section>
     <section style="padding: 30px;">
-    <h1>Top Buy</h1>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <h1>Sản phẩm được mua nhiều nhất</h1>
+      <div id="carousel-example-generic-2" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic-2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic-2" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic-2" data-slide-to="2"></li>
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        ...
+      <div class="carousel-inner" role="listbox" id="list-product-home-1">
+        
       </div>
     </section>
     <section style="padding: 30px;">
-    <h1>Top New</h1>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <h1>Sản phẩm mới nhất</h1>
+      <div id="carousel-example-generic-3" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic-3" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic-3" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic-3" data-slide-to="2"></li>
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        ...
+      <div class="carousel-inner" role="listbox" id="list-product-home-2"> 
+      
       </div>
     </section>
     <section style="padding: 30px;">
-    <h1>Random Product</h1>
+    <h1>Sản phẩm ngẫu nhiên</h1>
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -381,50 +273,9 @@
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        <div class="item item1">
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/2.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="col-md-4">
-            <img src="img/resize/1.jpg" class="img-responsive" alt="">
-          </div>
-          <div class="carousel-caption">
-            ...
-          </div>
-        </div>
-        ...
+      <div class="carousel-inner" role="listbox" id="list-product-home-3">
+
+      </div>
       </div>
     </section>
     <section id="contact">
@@ -459,6 +310,7 @@
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/home.js"></script>
     <script type="text/javascript">
         $("#searchData").keydown(function (e) {
           if (e.keyCode == 13) {

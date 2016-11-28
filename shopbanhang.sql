@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2016 at 07:13 PM
--- Server version: 5.7.16-0ubuntu0.16.04.1
--- PHP Version: 5.5.35
+-- Generation Time: Nov 28, 2016 at 05:01 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.5.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `ID` int(6) NOT NULL,
   `Email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
@@ -45,6 +46,7 @@ INSERT INTO `admin` (`ID`, `Email`, `Password`) VALUES
 -- Table structure for table `bill`
 --
 
+DROP TABLE IF EXISTS `bill`;
 CREATE TABLE `bill` (
   `ID` int(6) NOT NULL,
   `UserID` int(6) NOT NULL,
@@ -68,6 +70,7 @@ INSERT INTO `bill` (`ID`, `UserID`, `PriceTotal`, `Date`) VALUES
 -- Table structure for table `cart`
 --
 
+DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `ID` int(6) NOT NULL,
   `ProductID` int(6) NOT NULL,
@@ -85,7 +88,9 @@ INSERT INTO `cart` (`ID`, `ProductID`, `UserID`, `Number`) VALUES
 (12, 35, 7, 1),
 (13, 7, 7, 2),
 (41, 31, 1, 1),
-(43, 41, 1, 1);
+(43, 41, 1, 1),
+(46, 29, 1, 1),
+(47, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -93,6 +98,7 @@ INSERT INTO `cart` (`ID`, `ProductID`, `UserID`, `Number`) VALUES
 -- Table structure for table `comment`
 --
 
+DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `ID` int(6) NOT NULL,
   `ProductID` int(6) NOT NULL,
@@ -106,7 +112,6 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`ID`, `ProductID`, `UserID`, `Content`, `Time`) VALUES
-(1, 2, 1, 'Hàng cũng tốt!', '2016-11-21 15:14:45'),
 (2, 2, 7, 'Thấy cũng thường!', '2016-11-21 15:24:46'),
 (4, 2, 1, 'Ok', '2016-11-22 14:40:33'),
 (6, 2, 8, 'Demo', '2016-11-22 17:03:13'),
@@ -118,6 +123,7 @@ INSERT INTO `comment` (`ID`, `ProductID`, `UserID`, `Content`, `Time`) VALUES
 -- Table structure for table `contact`
 --
 
+DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `ID` int(6) NOT NULL,
   `Email` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
@@ -139,6 +145,7 @@ INSERT INTO `contact` (`ID`, `Email`, `Sub`, `Comment`) VALUES
 -- Table structure for table `payment`
 --
 
+DROP TABLE IF EXISTS `payment`;
 CREATE TABLE `payment` (
   `ID` int(6) NOT NULL,
   `BillID` int(6) NOT NULL,
@@ -168,6 +175,7 @@ INSERT INTO `payment` (`ID`, `BillID`, `ProductID`, `Num`, `Price`) VALUES
 -- Table structure for table `product`
 --
 
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `ID` int(6) NOT NULL,
   `Name` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
@@ -186,7 +194,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Description`, `star`, `NumVote`, `NumBuy`) VALUES
-(1, 'Loa Dàn 2.0 Soundmax A130 Red', 179000, 'Loa', 'Soundmax', '2016-11-13', 'Thiết kế nhỏ gọn âm thanh sống động.', 0, 0, 2),
+(1, 'Loa Dàn 2.0 Soundmax A130 Red', 179000, 'Loa', 'Soundmax', '2016-11-13', 'Thiết kế nhỏ gọn âm thanh sống động. Ok', 0, 0, 2),
 (2, 'Loa Bluetooth Remax RM-M1', 179000, 'Loa', 'Bluetooth', '2016-11-13', 'Sản Phẩm Loa Bluetooth tích hợp FM Radio và Micro phone giúp bạn vừa có thể nghe nhạc, vừa có thể nhận và trả lời cuộc Đàm thoại thông qua kết nối Bluetooth. Hoặc làm nguồn phát trực tiếp và đồng thời chơi những Bản nhạc từ những thiết bị như USB,Thẻ nhớ…  thông qua những khe cắm tực tiếp trên loa.', 2.5, 2, 0),
 (3, 'Loa dàn 2.0 Senicc SN-462', 260000, 'Loa', 'Senicc', '2016-11-14', 'Tương thích với Điện thoại,máy tính,laptop,máy tính bảng… Nghe nhạc,chơi game', 0, 0, 0),
 (4, 'Loa dàn 2.0 Senicc SN-467', 260000, 'Loa', 'Senicc', '2016-11-14', 'Kích thước nhỏ gọn, có tính di động cao, phù hợp với nhiều không gian hoàn cảnh sử dụng như đi du lịch, nghe trong phòng,nơi làm việc...\r\n Thích hợp cho nhiều thiết công nghệ khác nhau: điện thoại, máy tính bảng, máy tính xách tay, máy tính để bàn, máy mp3…\r\n Loa SENICC SN-467 đáp ứng để thể hiện tất cả các âm ở dải âm tần 150-15khz\r\n Cho âm thanh khá chung thực\r\n Loa SENICC SN 467 có thể đáp ứng tần số 150-15kHz độ  và Tỷ lệ tín hiệu trên nhiễu của SENICC SN 467 là >60dB,\r\n Loa mini SENICC sử dụng nguồn 5V usb,Jack tín hiệu 3.5 mm  cho phép kết nối với hầu hết các thiết bị âm thanh Digital và phát âm thanh STREORIO', 0, 0, 0),
@@ -244,6 +252,7 @@ INSERT INTO `product` (`ID`, `Name`, `Price`, `Type`, `Class`, `PostDay`, `Descr
 -- Table structure for table `rating`
 --
 
+DROP TABLE IF EXISTS `rating`;
 CREATE TABLE `rating` (
   `ID` int(6) NOT NULL,
   `UserID` int(6) NOT NULL,
@@ -266,6 +275,7 @@ INSERT INTO `rating` (`ID`, `UserID`, `ProductID`, `Star`) VALUES
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `ID` int(6) NOT NULL,
   `Username` varchar(15) COLLATE utf8mb4_vietnamese_ci NOT NULL,
@@ -280,10 +290,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Email`, `FullName`, `Address`) VALUES
-(1, 'QuangHung', '123456', 'hqh@gmail.com', 'Hong Quang Hung', 'z'),
-(7, 'ThaiHoa', '123456', 'game@ya.com', 'Nguyễn Thái Hòa', NULL),
-(8, 'TranHoa', '123456', 'hoa@gmail.com', 'Trần Thị Hoa', NULL),
-(9, 'user', 'user', 'user@gmail.com', 'No Name', NULL);
+(1, 'QuangHung', '123456', 'hqh@gmail.com', 'Hong Quang Hung', ''),
+(7, 'ThaiHoa', '123456', '555555@h.com', 'Nguyễn Thái Hòa', ''),
+(8, 'TranHoa', '123456', 'hoa@gmail.com', 'Trần Thị Hoa', NULL);
 
 --
 -- Indexes for dumped tables
@@ -363,7 +372,7 @@ ALTER TABLE `bill`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `comment`
 --
@@ -373,7 +382,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `payment`
 --
@@ -393,7 +402,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
